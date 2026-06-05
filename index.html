@@ -4,184 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clean Rituals — Hair that feels itself again</title>
-  <meta name="description" content="A coming soon haircare brand for women returning to natural, intentional care — blending time-honoured beauty rituals, clean formulations and the quiet power of nature." />
+  <meta name="description" content="A coming soon haircare brand for women returning to natural, intentional care — blending time-honoured beauty rituals, clean formulations and the quiet power of nature. One considered product at a time." />
 
-  <!-- Social sharing -->
   <meta property="og:title" content="Clean Rituals — rooted. refined." />
   <meta property="og:description" content="Hair that feels itself again. A clean haircare brand, coming soon." />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts: Cormorant Garamond stands in for the brand's Edensor (editorial serif);
-       Helvetica Neue (system) is used for body, per the brand guidelines. -->
+  <!-- Cormorant Garamond stands in for the brand's Edensor (editorial serif).
+       Helvetica Neue (system) is the brand's body typeface. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <a href="#top" class="wordmark">clean rituals</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#ritual">The Ritual</a>
-      <a href="#founder">Founder</a>
-      <a href="#notes">Ritual Notes</a>
-      <a href="#join" class="nav-cta">Join the list</a>
-    </nav>
-  </header>
+  <!-- 1 · Hero / Coming Soon -->
+  <section class="hero" id="top">
+    <div class="hero-text reveal">
+      <p class="coming-soon">Coming Soon</p>
 
-  <main id="top">
+      <div class="lockup">
+        <img class="logo" src="assets/logo.png" alt="Clean Rituals" width="300" />
+        <p class="tagline">Rooted. Refined.</p>
+      </div>
 
-    <!-- 1. Hero / Coming Soon -->
-    <section class="hero" id="hero">
-      <div class="hero-inner reveal">
-        <p class="eyebrow">rooted. refined.</p>
-        <p class="badge">Coming Soon</p>
-        <h1 class="hero-title">Hair that feels<br />itself again</h1>
-        <p class="hero-lede">
-          A coming soon haircare brand for women returning to natural, intentional
-          care — blending time-honoured beauty rituals, clean formulations and the
-          quiet power of nature. One considered product at a time.
-        </p>
+      <h1 class="hero-headline">Hair that feels itself again</h1>
 
-        <form class="signup" id="hero-signup" novalidate>
-          <label class="sr-only" for="hero-email">Email address</label>
-          <input
-            type="email"
-            id="hero-email"
-            name="email"
-            placeholder="Your email"
-            autocomplete="email"
-            required
-          />
-          <button type="submit">Be the first to know</button>
-        </form>
-        <p class="form-note" data-form-note></p>
+      <p class="hero-body">
+        A coming soon haircare brand for women returning to natural, intentional
+        care — blending time-honoured beauty rituals, clean formulations and the
+        quiet power of nature.
+      </p>
+      <p class="hero-body hero-body--em">One considered product at a time.</p>
 
-        <a class="insta-link" href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener">
-          Follow the journey on Instagram →
+      <div class="hero-actions">
+        <a class="link-cta" href="#join">Be the first to know</a>
+        <a class="link-cta link-cta--muted" href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener">
+          Follow the journey on Instagram
         </a>
       </div>
-    </section>
+    </div>
 
-    <!-- 2. The ritual is the result -->
-    <section class="ritual" id="ritual">
-      <div class="ritual-inner reveal">
-        <h2 class="section-title">The ritual is the result.</h2>
-        <p class="ritual-copy">
-          Stripping beauty rituals back to what matters — intentional, sensory and
-          worth repeating. Each formula created as a considered ritual, rooted in
-          botanical wisdom.
-        </p>
-        <p class="ritual-copy">
-          No distractions. No compromise. Just formulas that honour the hair and
-          feel effortless in everyday routines — so caring for your hair becomes
-          less of a rescue, and more of a rhythm.
-        </p>
+    <div class="hero-image reveal">
+      <img src="assets/hero.png" alt="A woman combing her freshly washed hair" />
+    </div>
+  </section>
+
+  <!-- 2 · The ritual is the result -->
+  <section class="ritual">
+    <div class="ritual-head reveal">
+      <h2 class="display olive">The ritual is the result.</h2>
+    </div>
+    <div class="ritual-body">
+      <div class="ritual-copy reveal">
+        <p>Stripping beauty rituals back to what matters — intentional, sensory and worth repeating.</p>
+        <p>Each formula created as a considered ritual, rooted in botanical wisdom. No distractions, no compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
+        <p>So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
       </div>
-    </section>
+      <figure class="ritual-figure reveal">
+        <img src="assets/ritual.jpg" alt="A hand cradling fresh botanical leaves" />
+      </figure>
+    </div>
+  </section>
 
-    <!-- 3. A note from the founder -->
-    <section class="founder" id="founder">
-      <div class="founder-inner reveal">
-        <p class="eyebrow eyebrow--dark">A note from the founder</p>
-        <div class="founder-copy">
-          <p>
-            As life moved on — through new cities, new countries, work, motherhood,
-            and the quiet shifts that come with time — my hair began to feel less
-            like the hair I remembered.
-          </p>
-          <p>
-            For years, I looked for answers in more products, more promises, and
-            more steps. Then I began to wonder if what my hair needed was not more,
-            but better.
-          </p>
-          <p>
-            Clean Rituals began with that question, and with a return to the rituals
-            that get lost in the pace of life. A return to the potency of nature. A
-            return to formulas that perform without the unnecessary. A return to
-            haircare that feels like a ritual, not a rescue.
-          </p>
-          <p>
-            Thank you for being here at the beginning. Clean Rituals is being created
-            for hair that changes as life does — through motherhood, time, transition,
-            and beyond. Rituals designed to bring care back into the everyday, so your
-            hair can feel like itself again.
-          </p>
-        </div>
+  <!-- 3 · A note from the founder -->
+  <section class="founder">
+    <h2 class="display olive centered reveal">A note from the founder</h2>
+    <div class="founder-grid">
+      <div class="founder-copy reveal">
+        <p>As life moved on — through new cities, new countries, work, motherhood, and the quiet shifts that come with time — my hair began to feel less like the hair I remembered.</p>
+        <p>For years, I looked for answers in more products, more promises, and more steps. Then I began to wonder if what my hair needed was not more, but better.</p>
+        <p>Clean Rituals began with that question, and with a return to the rituals that get lost in the pace of life. A return to the potency of nature. A return to formulas that perform without the unnecessary. A return to haircare that feels like a ritual, not a rescue.</p>
+        <p>Thank you for being here at the beginning. Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition, and beyond. Rituals designed to bring care back into the everyday, so your hair can feel like itself again.</p>
       </div>
-    </section>
+      <figure class="founder-figure reveal">
+        <img src="assets/founder.jpg" alt="The founder of Clean Rituals" />
+      </figure>
+    </div>
+  </section>
 
-    <!-- 4. Ritual Notes -->
-    <section class="notes" id="notes">
-      <div class="notes-head reveal">
-        <h2 class="section-title">Ritual Notes</h2>
-        <p class="notes-intro">
-          Explore the first notes from Clean Rituals — short, considered pieces to
-          help you understand your hair and the rhythm of caring for it.
-        </p>
+  <!-- 4 · Ritual Notes -->
+  <section class="notes">
+    <div class="notes-top">
+      <div class="notes-collage reveal">
+        <img class="collage-a" src="assets/note-1.jpg" alt="Amber product bottle resting on linen" />
+        <img class="collage-b" src="assets/note-2.jpg" alt="Hands rinsing hair beneath water" />
+        <img class="collage-c" src="assets/note-3.jpg" alt="A wooden bowl in soft daylight" />
       </div>
-      <div class="notes-grid">
-        <article class="note-card reveal">
-          <span class="note-no">01</span>
-          <h3>Natural Wisdom</h3>
-          <p>
-            Rituals we remember — a reflection on beauty wisdom as old as time
-            itself, and how we can carry it forward with more intention.
-          </p>
-        </article>
-        <article class="note-card reveal">
-          <span class="note-no">02</span>
-          <h3>Clean Beauty Science</h3>
-          <p>
-            A simple guide to understanding fillers, harsh surfactants, and why
-            ingredients should earn their place in every formula.
-          </p>
-        </article>
-        <article class="note-card reveal">
-          <span class="note-no">03</span>
-          <h3>Rituals for Real Life</h3>
-          <p>
-            How small, easy, repeatable rituals can support hair through stress,
-            climate, styling and the pace of life.
-          </p>
-        </article>
+      <div class="notes-intro reveal">
+        <h2 class="display cream">Ritual Notes</h2>
+        <p>Explore the first notes from Clean Rituals — short, considered pieces to help you understand your hair and the rhythm of caring for them.</p>
       </div>
-    </section>
+    </div>
 
-    <!-- 5. Join the list / Founder's circle -->
-    <section class="join" id="join">
-      <div class="join-inner reveal">
-        <p class="eyebrow">The doors open soon</p>
-        <h2 class="join-title">Be among the first inside<br />the founder's circle</h2>
-        <p class="join-copy">
-          We're putting the finishing touches on the first three rituals. Leave your
-          email and we'll write to you once — when it's time.
-        </p>
-        <form class="signup signup--light" id="join-signup" novalidate>
-          <label class="sr-only" for="join-email">Email address</label>
-          <input
-            type="email"
-            id="join-email"
-            name="email"
-            placeholder="Your email"
-            autocomplete="email"
-            required
-          />
-          <button type="submit">Join the list</button>
-        </form>
-        <p class="form-note form-note--light" data-form-note></p>
-      </div>
-    </section>
+    <div class="notes-grid">
+      <article class="note reveal">
+        <h3>Natural Wisdom</h3>
+        <p>Rituals we remember — a reflection on beauty wisdom as old as time itself, and how we can carry it forward with more intention.</p>
+      </article>
+      <article class="note reveal">
+        <h3>Clean Beauty Science</h3>
+        <p>A simple guide to understanding fillers, harsh surfactants, and why ingredients should earn their place in every formula.</p>
+      </article>
+      <article class="note reveal">
+        <h3>Rituals for Real Life</h3>
+        <p>How small, easy, repeatable rituals can support hair through stress, climate, styling and the pace of life.</p>
+      </article>
+    </div>
+  </section>
 
-  </main>
+  <!-- 5 · The doors open soon / Join the list -->
+  <section class="join" id="join">
+    <div class="join-text reveal">
+      <p class="join-kicker display olive">The doors open soon.</p>
+      <h2 class="display join-headline">Be among the first inside the founder's circle</h2>
+      <p class="join-body">
+        We're putting the finishing touches on the first three rituals. Leave your
+        email and we'll write to you once — when it's time.
+      </p>
 
+      <form class="signup" id="join-signup" novalidate>
+        <label class="sr-only" for="join-email">Email address</label>
+        <input type="email" id="join-email" name="email" placeholder="Your email" autocomplete="email" required />
+        <button type="submit">Join the list</button>
+      </form>
+      <p class="form-note" data-form-note></p>
+    </div>
+
+    <figure class="join-image reveal">
+      <img src="assets/join.jpg" alt="A woman combing her long, dark hair" />
+    </figure>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    <span class="wordmark wordmark--footer">clean rituals</span>
-    <p class="footer-tag">rooted. refined.</p>
-    <p class="footer-fine">© <span id="year"></span> Clean Rituals. Made for every hair type.</p>
+    <img class="footer-logo" src="assets/logo-light.png" alt="Clean Rituals" width="190" />
+    <p class="footer-tag">Rooted. Refined.</p>
+    <p class="footer-fine">© <span id="year"></span> Clean Rituals. Sulphate-free. Made for every hair type.</p>
   </footer>
 
   <script src="main.js"></script>
