@@ -7,9 +7,8 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // --- Email signup handling ------------------------------------------
-  // NOTE: This is a front-end stub. To actually collect emails, connect the
-  // form to a provider (Mailchimp, ConvertKit, Klaviyo, Formspree, etc.)
-  // by replacing the body of handleSignup with a fetch() to your endpoint.
+  // Sends the email to our own backend (server.js -> emails.csv).
+  // No third-party tools involved.
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
@@ -18,6 +17,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var input = form.querySelector('input[type="email"]');
+      var button = form.querySelector("button");
       var note = form.parentElement.querySelector("[data-form-note]");
       var email = input.value.trim();
 
@@ -27,9 +27,35 @@
         return;
       }
 
-      // TODO: send `email` to your mailing-list provider here.
-      if (note) note.textContent = "Thank you — we'll write to you once, when it's time.";
-      form.reset();
+      button.disabled = true;
+      var originalLabel = button.textContent;
+      button.textContent = "Sending…";
+
+      fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, source: form.id })
+      })
+        .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, data: d }; }); })
+        .then(function (result) {
+          if (result.ok && result.data.ok) {
+            // Replace the form with a brand-styled success state
+            form.innerHTML =
+              '<p class="signup-success">✓ ' +
+              (result.data.message || "You're on the list.") +
+              "</p>";
+            if (note) note.textContent = "";
+          } else {
+            if (note) note.textContent = (result.data && result.data.error) || "Something went wrong. Please try again.";
+            button.disabled = false;
+            button.textContent = originalLabel;
+          }
+        })
+        .catch(function () {
+          if (note) note.textContent = "Couldn't reach the server. Please try again.";
+          button.disabled = false;
+          button.textContent = originalLabel;
+        });
     });
   }
 

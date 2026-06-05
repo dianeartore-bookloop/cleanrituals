@@ -5,5 +5,8 @@
 .vscode/
 .idea/
 
-# Dependencies (if you add a build step later)
+# Dependencies
 node_modules/
+
+# Collected emails — keep your subscriber data OUT of git
+emails.csv

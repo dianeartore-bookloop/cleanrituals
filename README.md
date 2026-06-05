@@ -20,11 +20,30 @@ A one-page "coming soon" landing page for **Clean Rituals**, a clean haircare br
 - **Type:** Edensor (editorial serif — substituted with Cormorant Garamond on the web), Helvetica Neue (body)
 
 ## Run it locally
-No build step needed — it's plain HTML/CSS/JS. Either:
-- Double-click `index.html`, or
-- Run a local server: `python3 -m http.server` then open http://localhost:8000
+This now includes a tiny self-owned backend (`server.js`) that collects emails —
+no third-party tools.
 
-## Collecting emails
-The signup forms are currently a front-end stub (see the `TODO` in `main.js`).
-To actually collect addresses, connect the form to a mailing-list provider
-(e.g. Mailchimp, ConvertKit, Klaviyo) or a form service (e.g. Formspree).
+```bash
+npm install      # one-time: installs Express
+npm start        # starts the site + backend
+```
+
+Then open **http://localhost:3000**.
+
+## Collecting emails (your own server)
+- Signups POST to `/api/subscribe` and are appended to **`emails.csv`** (created
+  automatically). This file is your subscriber list — it is git-ignored so your
+  data never gets committed.
+- **Download the list:** open **http://localhost:3000/admin/subscribers**
+  (locally) to download a CSV. In production, set an `ADMIN_KEY` env var and
+  visit `/admin/subscribers?key=YOUR_KEY`.
+
+## Going live
+The backend needs a host that runs Node **and** keeps the data file. Steps:
+1. Deploy to an always-on host (Render, Railway, Fly.io). Build/start command: `npm start`.
+2. Add a **persistent disk** and point `DATA_DIR` at it, so `emails.csv` survives
+   restarts and deploys.
+3. Set `ADMIN_KEY` to a secret value to protect the subscriber download.
+
+> Static-only hosting (GitHub Pages, Netlify static) can't run the backend —
+> use it only if you switch to a hosted form service instead.

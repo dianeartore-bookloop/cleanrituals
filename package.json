@@ -1,0 +1,15 @@
+{
+  "name": "clean-rituals",
+  "version": "1.0.0",
+  "description": "Clean Rituals coming-soon landing page with self-owned email collection",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

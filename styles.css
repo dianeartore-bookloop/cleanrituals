@@ -209,6 +209,23 @@ a { color: inherit; }
 }
 .form-note--light { color: var(--linen); }
 
+.signup-success {
+  margin: 0;
+  padding: 0.95rem 1.2rem;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 999px;
+  background: rgba(77, 79, 42, 0.1);
+  color: var(--cactus);
+  border: 1px solid rgba(77, 79, 42, 0.25);
+}
+.signup--light .signup-success {
+  background: rgba(244, 234, 220, 0.14);
+  color: var(--oatmeal);
+  border-color: rgba(244, 234, 220, 0.4);
+}
+
 @media (max-width: 540px) {
   .signup { flex-direction: column; }
   .signup button { width: 100%; }
