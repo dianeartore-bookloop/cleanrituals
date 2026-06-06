@@ -1,180 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clean Rituals — Hair that feels itself again</title>
-  <meta name="description" content="A coming soon haircare brand for women returning to natural, intentional care — blending time-honoured beauty rituals, clean formulations and the quiet power of nature." />
-  <meta property="og:title" content="Clean Rituals — rooted. refined." />
-  <meta property="og:description" content="Hair that feels itself again. Coming soon." />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Rituals — Rooted. Refined.</title>
+  <meta name="description" content="A coming soon haircare brand for women returning to natural, intentional care — blending time-honoured beauty rituals, clean formulations and the quiet power of nature.">
+  <meta property="og:title" content="Clean Rituals — Rooted. Refined.">
+  <meta property="og:description" content="Hair that feels itself again. A clean haircare brand, coming soon.">
+  <meta property="og:type" content="website">
 
-  <!-- Edensor is Canva-licensed. Cormorant Garamond is the closest available web serif.
-       Helvetica Neue is the brand body font (system stack). -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <link rel="stylesheet" href="styles.css" />
+    :root {
+      --cream: #faf9f7;
+      --olive: #4d4f2a;
+      --brown: #3d210b;
+      --ink:   #1a1812;
+      --light: #fff8ef;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; overflow-x: hidden; }
+    body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+    /* Every section is one equal full-height slide; they stack in normal
+       flow with overflow hidden, so they can never overlap. */
+    section {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════════ 1. HERO ══════════════════════════════ */
+    .s-hero { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; }
+    .hero-left { display: flex; flex-direction: column; padding: 5.5vh 4vw 5.5vh 5.5vw; }
+    .label-caps {
+      font-family: var(--sans); font-size: clamp(9px, 0.65vw, 11px); font-weight: 400;
+      letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink);
+    }
+    .hero-coming { margin-bottom: 0; }
+    .hero-logo-block { margin-top: 3vh; }
+    .logo-img { width: clamp(200px, 30vw, 460px); max-width: 90%; display: block; }
+    .hero-tagline {
+      font-family: var(--sans); font-size: clamp(8px, 0.6vw, 10px); font-weight: 400;
+      letter-spacing: 0.36em; text-transform: uppercase; color: var(--ink);
+      text-align: center; width: clamp(200px, 30vw, 460px);
+      margin-top: 0.6vh; margin-bottom: 4vh;
+    }
+    .hero-headline {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 40px); line-height: 1.18; color: var(--ink); margin-bottom: 2.4vh;
+    }
+    .hero-body {
+      font-family: var(--sans); font-size: clamp(11.5px, 0.88vw, 14.5px); font-weight: 300;
+      line-height: 1.82; color: var(--ink); max-width: 500px;
+    }
+    .hero-body + .hero-body { margin-top: 0.8vh; }
+    .hero-cta-group { margin-top: 3.5vh; }
+    .hero-link {
+      display: block; font-family: var(--sans); font-size: clamp(9px, 0.65vw, 11px); font-weight: 400;
+      letter-spacing: 0.30em; text-transform: uppercase; color: var(--ink);
+      text-decoration: none; margin-bottom: 0.9vh; white-space: nowrap;
+    }
+    .hero-link:hover { opacity: 0.45; }
+    .hero-right { overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: 75% center; display: block; }
+
+    /* ══════════════════════════════ 2. PHILOSOPHY ══════════════════════════════ */
+    .s-phil { background: var(--olive); display: grid; grid-template-columns: 5fr 7fr; padding: 6vh 5vw 5vh 5vw; }
+    .phil-left { display: flex; flex-direction: column; justify-content: flex-end; gap: 2.4vh; padding-bottom: 6vh; padding-right: 2vw; }
+    .phil-right { display: flex; flex-direction: column; padding-left: 2vw; }
+    .phil-headline {
+      font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.8vw, 76px);
+      line-height: 1.05; color: var(--light); text-align: right; flex-shrink: 0; padding-top: 2vh;
+    }
+    .phil-body {
+      font-family: var(--sans); font-size: clamp(12px, 0.9vw, 15px); font-weight: 300;
+      line-height: 1.95; letter-spacing: 0.03em; color: var(--light);
+    }
+    .phil-photo-wrap {
+      flex: 1; display: flex; align-items: flex-start; justify-content: flex-end;
+      padding-right: 3vw; padding-top: 3vh; padding-bottom: 6vh; min-height: 0;
+    }
+    .phil-photo-wrap img { height: clamp(200px, 50vh, 520px); width: auto; display: block; object-fit: cover; }
+
+    /* ══════════════════════════════ 3. FOUNDER ══════════════════════════════ */
+    .s-founder { background: var(--cream); display: grid; grid-template-rows: auto 1fr; padding: 5vh 5vw 4vh; overflow: hidden; }
+    .founder-heading {
+      font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 4.8vw, 72px);
+      line-height: 1.08; color: var(--olive); text-align: center; margin-bottom: 4vh;
+    }
+    .founder-grid { display: grid; grid-template-columns: 3.5fr 1fr; gap: 3.5vw; align-items: start; min-height: 0; }
+    .founder-text {
+      font-family: var(--sans); font-size: clamp(11.5px, 0.9vw, 14.5px); font-weight: 300;
+      line-height: 1.9; color: var(--ink); letter-spacing: 0.02em;
+    }
+    .founder-text p + p { margin-top: 1.2vh; }
+    .founder-photo { height: 56vh; overflow: hidden; }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 10%; display: block; }
+
+    /* ══════════════════════════════ 4. RITUAL NOTES ══════════════════════════════ */
+    .s-notes { background: var(--brown); display: grid; grid-template-rows: 1fr auto; padding: 5vh 4.5vw 4vh; }
+    .notes-top { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items: center; min-height: 0; }
+    .notes-collage { display: grid; grid-template-columns: 1fr 1.3fr; grid-template-rows: 1fr 1fr; gap: 5px; height: 100%; min-height: 0; }
+    .notes-cell { overflow: hidden; }
+    .notes-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .notes-right { display: flex; flex-direction: column; gap: 2.5vh; }
+    .notes-title {
+      font-family: var(--serif); font-weight: 700; font-size: clamp(80px, 11.5vw, 180px);
+      line-height: 0.86; color: var(--light); letter-spacing: -0.02em;
+    }
+    .notes-desc {
+      font-family: var(--sans); font-size: clamp(11px, 0.85vw, 13.5px); font-weight: 300;
+      line-height: 1.82; color: var(--light); text-align: right; letter-spacing: 0.025em;
+    }
+    .notes-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3vw; padding-top: 3.5vh; }
+    .note-col-title {
+      font-family: var(--sans); font-size: clamp(11.5px, 0.88vw, 14px); font-weight: 500;
+      color: var(--light); margin-bottom: 1.2vh;
+    }
+    .note-col-body {
+      font-family: var(--sans); font-size: clamp(10.5px, 0.82vw, 13px); font-weight: 300;
+      line-height: 1.88; color: var(--light); text-align: justify; letter-spacing: 0.01em;
+    }
+
+    /* ══════════════════════════════ 5. CTA ══════════════════════════════ */
+    .s-cta { background: var(--cream); display: grid; grid-template-columns: 2fr 1fr; }
+    .cta-left { display: flex; flex-direction: column; justify-content: center; padding: 6vh 4vw 6vh 5.5vw; align-items: flex-start; }
+    .cta-h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 88px); line-height: 1.04; color: var(--ink); margin-bottom: 4vh; width: 100%; }
+    .cta-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.8vw, 48px); line-height: 1.18; color: var(--ink); margin-bottom: 4vh; text-align: center; width: 100%; }
+    .cta-body { font-family: var(--sans); font-size: clamp(12px, 0.9vw, 14.5px); font-weight: 300; line-height: 1.82; color: var(--ink); max-width: 520px; margin-bottom: 4.5vh; text-align: center; width: 100%; }
+    .email-signup { width: 100%; max-width: 440px; align-self: flex-start; }
+    .email-signup-label { font-family: var(--sans); font-size: clamp(8px, 0.6vw, 10px); font-weight: 400; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink); margin-bottom: 1.4vh; }
+    .email-form { display: flex; align-items: center; border-bottom: 1.5px solid var(--ink); padding-bottom: 10px; gap: 8px; }
+    .email-input {
+      flex: 1; min-width: 0; border: none; background: transparent; outline: none;
+      font-family: var(--serif); font-style: italic; font-size: clamp(14px, 1.1vw, 18px);
+      font-weight: 300; color: var(--ink); letter-spacing: 0.02em;
+    }
+    .email-input::placeholder { color: #b8b0a6; font-style: italic; }
+    .email-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: clamp(14px, 1.1vw, 18px); color: var(--ink); padding: 0; line-height: 1; transition: opacity 0.2s; flex-shrink: 0; }
+    .email-btn:hover { opacity: 0.4; }
+    .cta-right { display: flex; align-items: center; justify-content: center; padding: 6vh 4vw 6vh 2vw; overflow: hidden; }
+    .cta-right img { height: clamp(280px, 56vh, 600px); width: auto; object-fit: cover; display: block; }
+
+    /* ══════════════════════════════ MOBILE  (≤ 768px) ══════════════════════════════
+       The reference is desktop-first. On narrow screens we stack every grid to a
+       single column and let sections grow to fit their content (height: auto with a
+       100vh floor) so nothing is clipped — and, being in normal flow, nothing overlaps. */
+    @media (max-width: 768px) {
+      section { height: auto; min-height: 100vh; overflow: visible; }
+
+      .s-hero { grid-template-columns: 1fr; }
+      .hero-left { order: 2; padding: 6vw 7vw 9vw; align-items: center; text-align: center; }
+      .hero-logo-block { margin-top: 5vw; }
+      .logo-img, .hero-tagline { margin-left: auto; margin-right: auto; }
+      .hero-body { max-width: 100%; }
+      .hero-cta-group { margin-top: 7vw; }
+      .hero-link { white-space: normal; }
+      .hero-right { order: 1; height: 56vh; }
+
+      .s-phil { grid-template-columns: 1fr; padding: 10vw 7vw; gap: 6vw; }
+      .phil-right { order: 1; padding-left: 0; }
+      .phil-left { order: 2; justify-content: flex-start; padding: 0; gap: 4vw; }
+      .phil-headline { text-align: left; padding-top: 0; margin-bottom: 4vw; }
+      .phil-photo-wrap { justify-content: center; padding: 4vw 0 0; }
+      .phil-photo-wrap img { height: 44vh; }
+
+      .s-founder { padding: 10vw 7vw; }
+      .founder-heading { margin-bottom: 6vw; }
+      .founder-grid { grid-template-columns: 1fr; gap: 7vw; }
+      .founder-photo { order: -1; height: 50vh; }
+
+      .s-notes { padding: 12vw 7vw; gap: 8vw; }
+      .notes-top { grid-template-columns: 1fr; gap: 7vw; }
+      .notes-collage { height: 60vh; }
+      .notes-title { text-align: left; }
+      .notes-desc { text-align: left; }
+      .notes-cols { grid-template-columns: 1fr; gap: 6vw; padding-top: 7vw; }
+
+      .s-cta { grid-template-columns: 1fr; }
+      .cta-left { order: 2; padding: 12vw 7vw; align-items: center; }
+      .cta-h1, .cta-h2, .cta-body { text-align: center; }
+      .email-signup { align-self: center; }
+      .cta-right { order: 1; padding: 10vw 7vw 0; }
+      .cta-right img { height: 50vh; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ═══ SECTION 1 · HERO  bg: #faf9f7 ═══════════════════════════════════ -->
-  <section class="s-hero">
-    <div class="s-hero__text reveal">
-      <p class="label">COMING SOON</p>
-
-      <div class="s-hero__logo">
-        <img src="assets/logo-color.png" alt="Clean Rituals" />
-      </div>
-
-      <p class="label label--spaced">ROOTED. REFINED.</p>
-
-      <h1 class="s-hero__headline">Hair that feels itself again</h1>
-
-      <p class="s-hero__body">
-        A coming soon haircare brand for women returning to natural,
-        intentional care — blending time-honoured beauty rituals, clean
-        formulations and quiet power of nature.
-      </p>
-
-      <div class="s-hero__links">
-        <a href="#join" class="link-pill">BE THE FIRST TO KNOW</a>
-        <a href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener" class="link-text">
-          FOLLOW THE JOURNEY ON INSTAGRAM
-        </a>
-      </div>
+<!-- ═══ 1. HERO ═══ -->
+<section class="s-hero">
+  <div class="hero-left">
+    <p class="label-caps hero-coming">Coming Soon</p>
+    <div class="hero-logo-block">
+      <img src="assets/logo.png" alt="Clean Rituals" class="logo-img">
+      <p class="hero-tagline">Rooted. Refined.</p>
     </div>
-
-    <div class="s-hero__photo">
-      <img src="assets/hero-woman.png" alt="A woman combing her freshly washed hair" />
+    <p class="hero-headline">Hair that feels itself again</p>
+    <p class="hero-body">A coming soon haircare brand for women returning to natural, intentional care - blending time-honoured beauty rituals, clean formulations and quiet power of nature.</p>
+    <p class="hero-body">One considered product at a time.</p>
+    <div class="hero-cta-group">
+      <a href="#cta" class="hero-link">Be the first to know</a>
+      <a href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener" class="hero-link">Follow the journey on Instagram</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-right">
+    <img src="assets/hero.png" alt="Woman combing wet hair">
+  </div>
+</section>
 
-
-  <!-- ═══ SECTION 2 · THE RITUAL IS THE RESULT  bg: #4d4f2a ════════════════ -->
-  <section class="s-ritual">
-    <div class="s-ritual__inner">
-      <div class="s-ritual__copy reveal">
-        <p>Stripping beauty rituals back to what matters —
-           intentional, sensory and worth repeating.</p>
-        <p>Each formula created as a considered ritual — rooted in
-           botanical wisdom. No distractions, No compromise. Just formulas
-           that honour the hair and feel effortless in everyday routines.</p>
-        <p>So caring for your hair becomes less of a rescue,
-           and more of a rhythm.</p>
-      </div>
-      <div class="s-ritual__heading reveal">
-        <h2>The ritual is the result.</h2>
-      </div>
+<!-- ═══ 2. PHILOSOPHY ═══ -->
+<section class="s-phil">
+  <div class="phil-left">
+    <p class="phil-body">Stripping beauty rituals back to what matters - intentional, sensory and worth repeating.</p>
+    <p class="phil-body">Each formula created as a considered ritual — rooted in botanical wisdom. No distractions, No compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
+    <p class="phil-body">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
+  </div>
+  <div class="phil-right">
+    <h2 class="phil-headline">The ritual is the result.</h2>
+    <div class="phil-photo-wrap">
+      <img src="assets/leaves.jpg" alt="Hand holding botanical leaves">
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ═══ SECTION 3 · A NOTE FROM THE FOUNDER  bg: #fff8ef ════════════════ -->
-  <section class="s-founder">
-    <h2 class="s-founder__title reveal">A note from the founder</h2>
-
-    <div class="s-founder__grid">
-      <div class="s-founder__copy reveal">
-        <p>As life moved on — through new cities, new countries, work,
-           motherhood, and the quiet shifts that come with time — my hair
-           began to feel less like the hair I remembered.</p>
-        <p>For years, I looked for answers in more products, more promises,
-           and more steps. Then I began to wonder if what my hair needed
-           was not more, but better.</p>
-        <p>Clean Rituals began with that question, and with a return to the
-           rituals that get lost in the pace of life.</p>
-        <p>A return to the potency of nature.<br />
-           A return to formulas that perform without the unnecessary.<br />
-           A return to haircare that feels like a ritual, not a rescue.</p>
-        <p>Thank you for being here at the beginning. Clean Rituals is being
-           created for hair that changes as life does — through motherhood,
-           time, transition, and beyond. Rituals designed to bring care back
-           into the everyday, so your hair can feel like itself again.</p>
-      </div>
-      <figure class="s-founder__photo reveal">
-        <img src="assets/founder.jpg" alt="Akta, founder of Clean Rituals" />
-      </figure>
+<!-- ═══ 3. FOUNDER ═══ -->
+<section class="s-founder">
+  <h2 class="founder-heading">A note from the founder</h2>
+  <div class="founder-grid">
+    <div class="founder-text">
+      <p>As life moved on — through new cities, new countries, work, motherhood, and the quiet shifts that come with time — my hair began to feel less like the hair I remembered.</p>
+      <p>For years, I looked for answers in more products, more promises, and more steps. Then I began to wonder if what my hair needed was not more, but better.</p>
+      <p>Clean Rituals began with that question, and with a return to the rituals that get lost in the pace of life.</p>
+      <p>A return to the potency of nature.<br>A return to formulas that perform without the unnecessary.<br>A return to haircare that feels like a ritual, not a rescue.</p>
+      <p>Thank you for being here at the beginning.</p>
+      <p>Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition, and beyond. Rituals designed to bring care back into the everyday, so your hair can feel like itself again.</p>
     </div>
-  </section>
-
-
-  <!-- ═══ SECTION 4 · RITUAL NOTES  bg: #3d210b ═══════════════════════════ -->
-  <section class="s-notes">
-    <div class="s-notes__top">
-      <div class="s-notes__photos reveal">
-        <img class="s-notes__photo s-notes__photo--a" src="assets/note-1.jpg" alt="Product bottle on linen" />
-        <img class="s-notes__photo s-notes__photo--b" src="assets/note-2.jpg" alt="Hands under water" />
-        <img class="s-notes__photo s-notes__photo--c" src="assets/note-3.jpg" alt="Wooden bowl in light" />
-      </div>
-
-      <div class="s-notes__intro reveal">
-        <h2 class="s-notes__title">Ritual<br />Notes</h2>
-        <p>Explore the first notes from Clean Rituals — short, considered
-           pieces to help you understand your hair and the rhythm of
-           caring for them.</p>
-      </div>
+    <div class="founder-photo">
+      <img src="assets/founder.png" alt="Founder of Clean Rituals">
     </div>
+  </div>
+</section>
 
-    <div class="s-notes__articles">
-      <article class="s-notes__article reveal">
-        <h3>Natural Wisdom</h3>
-        <p>Rituals we remember — reflection on beauty wisdom as old as
-           time itself and how we can carry it forward with more intention.</p>
-      </article>
-      <article class="s-notes__article reveal">
-        <h3>Clean Beauty Science</h3>
-        <p>Simple guide to understanding filters, harsh surfactants and
-           why ingredients should earn their place in every formula.</p>
-      </article>
-      <article class="s-notes__article reveal">
-        <h3>Rituals for Real Life</h3>
-        <p>How small, easy, repeatable rituals can support hair through
-           stress, climate, styling and pace of life.</p>
-      </article>
+<!-- ═══ 4. RITUAL NOTES ═══ -->
+<section class="s-notes">
+  <div class="notes-top">
+    <div class="notes-collage">
+      <div class="notes-cell"><img src="assets/notes1.png" alt=""></div>
+      <div class="notes-cell"><img src="assets/notes2.png" alt=""></div>
+      <div class="notes-cell"><img src="assets/notes3.png" alt=""></div>
+      <div class="notes-cell"><img src="assets/notes4.png" alt=""></div>
     </div>
-  </section>
+    <div class="notes-right">
+      <h2 class="notes-title">Ritual<br>Notes</h2>
+      <p class="notes-desc">Explore the first notes from Clean Rituals — short, considered pieces to help you understand your hair and the rhythm of caring for them.</p>
+    </div>
+  </div>
+  <div class="notes-cols">
+    <div>
+      <p class="note-col-title">Natural Wisdom</p>
+      <p class="note-col-body">Rituals we remember - reflection on beauty wisdom as old as time itself and how we can carry it forward with more intention</p>
+    </div>
+    <div>
+      <p class="note-col-title">Clean Beauty Science</p>
+      <p class="note-col-body">Simple guide to understanding filters, harsh surfactants and why ingredients should earn their place in every formula</p>
+    </div>
+    <div>
+      <p class="note-col-title">Rituals for Real Life</p>
+      <p class="note-col-body">How small, easy, repeatable rituals can support hair through stress, climate, styling and pace of life</p>
+    </div>
+  </div>
+</section>
 
-
-  <!-- ═══ SECTION 5 · THE DOORS OPEN SOON  bg: #fff8ef ═══════════════════ -->
-  <section class="s-join" id="join">
-    <div class="s-join__text reveal">
-      <h2 class="s-join__heading">
-        The doors open soon.
-        <br /><br />
-        Be among the first inside the founder's circle
-      </h2>
-      <p class="s-join__body">
-        We're putting the finishing touches on the first three rituals.
-        Leave your email and we'll write to you once — when it's time.
-      </p>
-
-      <form class="s-join__form" id="join-signup" novalidate>
-        <label class="sr-only" for="join-email">Email address</label>
-        <input type="email" id="join-email" name="email"
-               placeholder="Your email" autocomplete="email" required />
-        <button type="submit">JOIN THE LIST</button>
+<!-- ═══ 5. CTA ═══ -->
+<section class="s-cta" id="cta">
+  <div class="cta-left">
+    <h2 class="cta-h1">The doors open soon.</h2>
+    <h3 class="cta-h2">Be among the first inside the founder's circle</h3>
+    <p class="cta-body">We're putting the finishing touches on the first three rituals. Leave your email and we'll write to you once — when it's time.</p>
+    <div class="email-signup">
+      <p class="email-signup-label">Join the list</p>
+      <form class="email-form" onsubmit="handleJoin(event,this)">
+        <input class="email-input" type="email" placeholder="Your email address" required>
+        <button type="submit" class="email-btn" aria-label="Submit">&#8594;</button>
       </form>
-      <p class="form-note" data-form-note></p>
     </div>
+  </div>
+  <div class="cta-right">
+    <img src="assets/cta.png" alt="Hair ritual">
+  </div>
+</section>
 
-    <figure class="s-join__photo reveal">
-      <img src="assets/join.jpg" alt="A woman combing her long dark hair" />
-    </figure>
-  </section>
-
-
-  <!-- ═══ FOOTER ═══════════════════════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <img class="site-footer__logo" src="assets/logo-color.png" alt="Clean Rituals" />
-    <p class="label label--spaced">ROOTED. REFINED.</p>
-    <p class="site-footer__fine">
-      © <span id="year"></span> Clean Rituals.
-      Sulphate-free. Made for every hair type.
-    </p>
-  </footer>
-
-  <script src="main.js"></script>
+<script>
+function handleJoin(e, form) {
+  e.preventDefault();
+  var input = form.querySelector('input');
+  var btn = form.querySelector('button');
+  if (!input.value) return;
+  // Client-side confirmation only. To collect emails for real, connect this
+  // form to your provider (e.g. Mailchimp) — see README.
+  btn.textContent = '✓';
+  btn.style.color = '#4d4f2a';
+  input.placeholder = "Thank you — we'll write when it's time.";
+  input.value = '';
+  form.style.pointerEvents = 'none';
+}
+</script>
 </body>
 </html>
