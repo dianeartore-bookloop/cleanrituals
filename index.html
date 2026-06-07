@@ -72,57 +72,73 @@
     .hero-right img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
 
     /* ══════════════════════════════ 2. PHILOSOPHY ══════════════════════════════ */
+    /* heading + photo are anchored to the SAME right edge so they line up */
     .s-phil {
       background: var(--olive);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto 1fr;
-      column-gap: 3vw;
-      padding: 7vh 13vw 6vh 5.5vw;
+      position: relative;
+      padding: 8vh 5.5vw 6vh;
     }
     .phil-headline {
-      grid-column: 2; grid-row: 1;
+      position: absolute; top: 10vh; right: 21vw;
       font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.6vw, 72px);
-      line-height: 1.05; color: var(--light); text-align: center;
-      white-space: nowrap; margin: 0 auto 5vh;
+      line-height: 1.05; color: var(--light); text-align: right;
+      white-space: nowrap; margin: 0;
     }
+    .phil-photo-wrap {
+      position: absolute; top: 24vh; right: 21vw;
+    }
+    .phil-photo-wrap img { height: clamp(260px, 55vh, 520px); width: auto; display: block; object-fit: cover; }
     .phil-left {
-      grid-column: 1; grid-row: 2;
-      align-self: start;
-      padding-right: 2vw;
+      max-width: 44%;
+      padding-top: 16vh;
     }
     .phil-body {
       font-family: var(--sans); font-size: clamp(14px, 1.15vw, 18px); font-weight: 300;
       line-height: 1.8; letter-spacing: 0.01em; color: var(--light);
     }
     .phil-body + .phil-body { margin-top: 2.4vh; }
-    .phil-photo-wrap {
-      grid-column: 2; grid-row: 2;
-      display: flex; align-items: flex-start; justify-content: center;
-    }
-    .phil-photo-wrap img { height: clamp(260px, 56vh, 520px); width: auto; display: block; object-fit: cover; }
 
     /* ══════════════════════════════ 3. FOUNDER ══════════════════════════════ */
-    .s-founder { background: var(--cream); display: grid; grid-template-rows: auto 1fr; padding: 5vh 5vw 4vh; overflow: hidden; }
+    .s-founder {
+      background: #fff8ef;
+      display: grid;
+      grid-template-columns: 1.9fr 1fr;
+      grid-template-rows: auto 1fr;
+      column-gap: 3vw;
+      padding: 8vh 5vw 5vh;
+      overflow: hidden;
+    }
     .founder-heading {
-      font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 4.8vw, 72px);
-      line-height: 1.08; color: var(--olive); text-align: center; margin-bottom: 4vh;
+      grid-column: 1; grid-row: 1;
+      font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 4.6vw, 68px);
+      line-height: 1.08; color: var(--olive); text-align: center; margin: 0 0 4vh;
     }
-    .founder-grid { display: grid; grid-template-columns: 3.5fr 1fr; gap: 3.5vw; align-items: start; min-height: 0; }
     .founder-text {
-      font-family: var(--sans); font-size: clamp(11.5px, 0.9vw, 14.5px); font-weight: 300;
-      line-height: 1.9; color: var(--ink); letter-spacing: 0.02em;
+      grid-column: 1; grid-row: 2; align-self: start;
+      font-family: var(--sans); font-size: clamp(15px, 1.25vw, 19px); font-weight: 300;
+      line-height: 1.6; color: var(--ink); letter-spacing: 0.01em;
     }
-    .founder-text p + p { margin-top: 1.2vh; }
-    .founder-photo { height: 56vh; overflow: hidden; }
-    .founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 10%; display: block; }
+    .founder-text p + p { margin-top: 1.4vh; }
+    .founder-photo {
+      grid-column: 2; grid-row: 2; align-self: start; justify-self: end;
+    }
+    .founder-photo img { height: clamp(240px, 42vh, 400px); width: auto; object-fit: cover; display: block; }
 
     /* ══════════════════════════════ 4. RITUAL NOTES ══════════════════════════════ */
     .s-notes { background: var(--brown); display: grid; grid-template-rows: 1fr auto; padding: 5vh 4.5vw 4vh; }
     .notes-top { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items: center; min-height: 0; }
-    .notes-collage { display: grid; grid-template-columns: 1fr 1.3fr; grid-template-rows: 1fr 1fr; gap: 5px; height: 100%; min-height: 0; }
+    /* 2 stacked photos on the left, 1 tall photo on the right */
+    .notes-collage {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px; height: 100%; min-height: 0;
+    }
     .notes-cell { overflow: hidden; }
     .notes-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .notes-cell--tl { grid-column: 1; grid-row: 1; }
+    .notes-cell--bl { grid-column: 1; grid-row: 2; }
+    .notes-cell--r  { grid-column: 2; grid-row: 1 / 3; }
     .notes-right { display: flex; flex-direction: column; gap: 2.5vh; }
     .notes-title {
       font-family: var(--serif); font-weight: 700; font-size: clamp(80px, 11.5vw, 180px);
@@ -184,10 +200,11 @@
       .phil-photo-wrap { grid-column: 1; grid-row: auto; justify-content: center; padding-right: 0; }
       .phil-photo-wrap img { height: 44vh; }
 
-      .s-founder { padding: 10vw 7vw; }
-      .founder-heading { margin-bottom: 6vw; }
-      .founder-grid { grid-template-columns: 1fr; gap: 7vw; }
-      .founder-photo { order: -1; height: 50vh; }
+      .s-founder { grid-template-columns: 1fr; grid-template-rows: auto; padding: 12vw 7vw; row-gap: 7vw; }
+      .founder-heading { grid-column: 1; grid-row: auto; text-align: left; margin: 0; }
+      .founder-text { grid-column: 1; grid-row: auto; }
+      .founder-photo { grid-column: 1; grid-row: auto; justify-self: center; }
+      .founder-photo img { height: 50vh; width: auto; }
 
       .s-notes { padding: 12vw 7vw; gap: 8vw; }
       .notes-top { grid-template-columns: 1fr; gap: 7vw; }
@@ -244,29 +261,26 @@
 <!-- ═══ 3. FOUNDER ═══ -->
 <section class="s-founder">
   <h2 class="founder-heading">A note from the founder</h2>
-  <div class="founder-grid">
-    <div class="founder-text">
-      <p>As life moved on — through new cities, new countries, work, motherhood, and the quiet shifts that come with time — my hair began to feel less like the hair I remembered.</p>
-      <p>For years, I looked for answers in more products, more promises, and more steps. Then I began to wonder if what my hair needed was not more, but better.</p>
-      <p>Clean Rituals began with that question, and with a return to the rituals that get lost in the pace of life.</p>
-      <p>A return to the potency of nature.<br>A return to formulas that perform without the unnecessary.<br>A return to haircare that feels like a ritual, not a rescue.</p>
-      <p>Thank you for being here at the beginning.</p>
-      <p>Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition, and beyond. Rituals designed to bring care back into the everyday, so your hair can feel like itself again.</p>
-    </div>
-    <div class="founder-photo">
-      <img src="assets/founder.png" alt="Founder of Clean Rituals">
-    </div>
+  <div class="founder-text">
+    <p>As life moved on — through new cities, new countries, work, motherhood, and the quiet shifts that come with time — my hair began to feel less like the hair I remembered.</p>
+    <p>For years, I looked for answers in more products, more promises, and more steps. Then I began to wonder if what my hair needed was not more, but better.</p>
+    <p>Clean Rituals began with that question, and with a return to the rituals that get lost in the pace of life.</p>
+    <p>A return to the potency of nature.<br>A return to formulas that perform without the unnecessary.<br>A return to haircare that feels like a ritual, not a rescue.</p>
+    <p>Thank you for being here at the beginning.</p>
+    <p>Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition, and beyond. Rituals designed to bring care back into the everyday, so your hair can feel like itself again.</p>
   </div>
+  <figure class="founder-photo">
+    <img src="assets/founder.png" alt="Founder of Clean Rituals">
+  </figure>
 </section>
 
 <!-- ═══ 4. RITUAL NOTES ═══ -->
 <section class="s-notes">
   <div class="notes-top">
     <div class="notes-collage">
-      <div class="notes-cell"><img src="assets/notes1.png" alt=""></div>
-      <div class="notes-cell"><img src="assets/notes2.png" alt=""></div>
-      <div class="notes-cell"><img src="assets/notes3.png" alt=""></div>
-      <div class="notes-cell"><img src="assets/notes4.png" alt=""></div>
+      <div class="notes-cell notes-cell--tl"><img src="assets/notes-bottle.jpg" alt="Product bottle on linen with a card"></div>
+      <div class="notes-cell notes-cell--bl"><img src="assets/notes-shower.jpg" alt="Hands rinsing with product under water"></div>
+      <div class="notes-cell notes-cell--r"><img src="assets/notes-bowl.jpg" alt="A wooden bowl on linen in daylight"></div>
     </div>
     <div class="notes-right">
       <h2 class="notes-title">Ritual<br>Notes</h2>
