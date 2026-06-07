@@ -159,14 +159,14 @@
     }
 
     /* ══════════════════════════════ 5. CTA ══════════════════════════════ */
-    .s-cta { background: var(--cream); display: grid; grid-template-columns: 2fr 1fr; }
+    .s-cta { background: #fff8ef; display: grid; grid-template-columns: 2fr 1fr; }
     .cta-left { display: flex; flex-direction: column; justify-content: center; padding: 6vh 4vw 6vh 5.5vw; align-items: flex-start; }
     .cta-h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 88px); line-height: 1.04; color: var(--ink); margin-bottom: 4vh; width: 100%; }
     .cta-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.8vw, 48px); line-height: 1.18; color: var(--ink); margin-bottom: 4vh; text-align: center; width: 100%; }
     .cta-body { font-family: var(--sans); font-size: clamp(12px, 0.9vw, 14.5px); font-weight: 300; line-height: 1.82; color: var(--ink); max-width: 520px; margin-bottom: 4.5vh; text-align: center; width: 100%; }
-    .email-signup { width: 100%; max-width: 440px; align-self: flex-start; }
-    .email-signup-label { font-family: var(--sans); font-size: clamp(8px, 0.6vw, 10px); font-weight: 400; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink); margin-bottom: 1.4vh; }
-    .email-form { display: flex; align-items: center; border-bottom: 1.5px solid var(--ink); padding-bottom: 10px; gap: 8px; }
+    .email-signup { width: 100%; max-width: 480px; align-self: flex-start; }
+    .email-form { display: flex; align-items: center; border-bottom: 1.5px solid var(--ink); padding-bottom: 10px; gap: 10px; }
+    .email-form-prefix { font-family: var(--sans); font-size: clamp(8px, 0.6vw, 10px); font-weight: 400; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
     .email-input {
       flex: 1; min-width: 0; border: none; background: transparent; outline: none;
       font-family: var(--serif); font-style: italic; font-size: clamp(14px, 1.1vw, 18px);
@@ -175,8 +175,8 @@
     .email-input::placeholder { color: #b8b0a6; font-style: italic; }
     .email-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: clamp(14px, 1.1vw, 18px); color: var(--ink); padding: 0; line-height: 1; transition: opacity 0.2s; flex-shrink: 0; }
     .email-btn:hover { opacity: 0.4; }
-    .cta-right { display: flex; align-items: center; justify-content: center; padding: 6vh 4vw 6vh 2vw; overflow: hidden; }
-    .cta-right img { height: clamp(280px, 56vh, 600px); width: auto; object-fit: cover; display: block; }
+    .cta-right { display: flex; align-items: center; justify-content: center; padding: 9vh 3vw; overflow: hidden; }
+    .cta-right img { height: clamp(240px, 46vh, 520px); width: auto; object-fit: cover; display: block; }
 
     /* ══════════════════════════════ MOBILE  (≤ 768px) ══════════════════════════════
        The reference is desktop-first. On narrow screens we stack every grid to a
@@ -216,7 +216,7 @@
       .s-cta { grid-template-columns: 1fr; }
       .cta-left { order: 2; padding: 12vw 7vw; align-items: center; }
       .cta-h1, .cta-h2, .cta-body { text-align: center; }
-      .email-signup { align-self: center; }
+      .email-signup { align-self: center; width: 100%; }
       .cta-right { order: 1; padding: 10vw 7vw 0; }
       .cta-right img { height: 50vh; }
     }
@@ -310,8 +310,8 @@
     <h3 class="cta-h2">Be among the first inside the founder's circle</h3>
     <p class="cta-body">We're putting the finishing touches on the first three rituals. Leave your email and we'll write to you once — when it's time.</p>
     <div class="email-signup">
-      <p class="email-signup-label">Join the list</p>
       <form class="email-form" onsubmit="handleJoin(event,this)">
+        <span class="email-form-prefix">Join the list</span>
         <input class="email-input" type="email" placeholder="Your email address" required>
         <button type="submit" class="email-btn" aria-label="Submit">&#8594;</button>
       </form>
