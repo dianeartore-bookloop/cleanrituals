@@ -26,46 +26,49 @@
     }
 
     html { scroll-behavior: smooth; }
-    html, body { height: 100%; overflow-x: hidden; }
+    html, body { overflow-x: hidden; }
     body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
 
-    /* Every section is one equal full-height slide; they stack in normal
-       flow with overflow hidden, so they can never overlap. */
+    /* Every section is one equal slide locked to the desktop 16:9 shape
+       (height = 56.25% of width). Because the WHOLE layout below is sized
+       purely in width units (vw), the page is one fixed composition that
+       scales as a single unit at any screen width — identical on desktop and
+       mobile, and it can never overflow vertically into the next section. */
     section {
-      height: 100vh;
+      height: 56.25vw;
       overflow: hidden;
     }
 
     /* ══════════════════════════════ 1. HERO ══════════════════════════════ */
     .s-hero { background: var(--cream); display: grid; grid-template-columns: 1.28fr 1fr; }
-    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5vh 4vw 5vh 5.5vw; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 2.81vw 4vw 2.81vw 5.5vw; }
     .label-caps {
-      font-family: var(--sans); font-size: clamp(13px, 1.1vw, 17px); font-weight: 400;
+      font-family: var(--sans); font-size: clamp(0px, 1.1vw, 17px); font-weight: 400;
       letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink);
     }
     .hero-coming { margin-bottom: 0; }
-    .hero-logo-block { margin-top: 2.2vh; text-align: center; }
-    .logo-img { width: clamp(300px, 42vw, 600px); max-width: 100%; display: block; margin: 0 auto; }
+    .hero-logo-block { margin-top: 1.24vw; text-align: center; }
+    .logo-img { width: clamp(0px, 42vw, 600px); max-width: 100%; display: block; margin: 0 auto; }
     .hero-tagline {
-      font-family: var(--sans); font-size: clamp(10px, 0.85vw, 13px); font-weight: 500;
+      font-family: var(--sans); font-size: clamp(0px, 0.85vw, 13px); font-weight: 500;
       letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink);
-      text-align: center; width: clamp(300px, 42vw, 600px); max-width: 100%;
-      margin: 0.6vh auto 3.5vh;
+      text-align: center; width: clamp(0px, 42vw, 600px); max-width: 100%;
+      margin: 0.34vw auto 1.97vw;
     }
     .hero-headline {
       font-family: var(--serif); font-style: italic; font-weight: 400;
-      font-size: clamp(24px, 2.8vw, 44px); line-height: 1.16; color: var(--ink); margin-bottom: 2.2vh;
+      font-size: clamp(0px, 2.8vw, 44px); line-height: 1.16; color: var(--ink); margin-bottom: 1.24vw;
     }
     .hero-body {
-      font-family: var(--sans); font-size: clamp(12.5px, 1vw, 15.5px); font-weight: 300;
+      font-family: var(--sans); font-size: clamp(0px, 1vw, 15.5px); font-weight: 300;
       line-height: 1.8; color: var(--ink); max-width: 520px;
     }
-    .hero-body + .hero-body { margin-top: 1vh; }
-    .hero-cta-group { margin-top: 3vh; }
+    .hero-body + .hero-body { margin-top: 0.56vw; }
+    .hero-cta-group { margin-top: 1.69vw; }
     .hero-link {
-      display: block; font-family: var(--sans); font-size: clamp(11px, 0.92vw, 14px); font-weight: 400;
+      display: block; font-family: var(--sans); font-size: clamp(0px, 0.92vw, 14px); font-weight: 400;
       letter-spacing: 0.30em; text-transform: uppercase; color: var(--ink);
-      text-decoration: none; margin-bottom: 1vh; white-space: nowrap;
+      text-decoration: none; margin-bottom: 0.56vw; white-space: nowrap;
     }
     .hero-link:hover { opacity: 0.45; }
     .hero-right { overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
@@ -76,27 +79,27 @@
     .s-phil {
       background: var(--olive);
       position: relative;
-      padding: 8vh 5.5vw 6vh;
+      padding: 4.5vw 5.5vw 3.38vw;
     }
     .phil-headline {
-      position: absolute; top: 10vh; right: 21vw;
-      font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.6vw, 72px);
+      position: absolute; top: 5.63vw; right: 21vw;
+      font-family: var(--serif); font-weight: 400; font-size: clamp(0px, 4.6vw, 72px);
       line-height: 1.05; color: var(--light); text-align: right;
       white-space: nowrap; margin: 0;
     }
     .phil-photo-wrap {
-      position: absolute; top: 24vh; right: 21vw;
+      position: absolute; top: 13.5vw; right: 21vw;
     }
-    .phil-photo-wrap img { height: clamp(260px, 55vh, 520px); width: auto; display: block; object-fit: cover; }
+    .phil-photo-wrap img { height: clamp(0px, 30.94vw, 520px); width: auto; display: block; object-fit: cover; }
     .phil-left {
       max-width: 44%;
-      padding-top: 16vh;
+      padding-top: 9vw;
     }
     .phil-body {
-      font-family: var(--sans); font-size: clamp(14px, 1.15vw, 18px); font-weight: 300;
+      font-family: var(--sans); font-size: clamp(0px, 1.15vw, 18px); font-weight: 300;
       line-height: 1.8; letter-spacing: 0.01em; color: var(--light);
     }
-    .phil-body + .phil-body { margin-top: 2.4vh; }
+    .phil-body + .phil-body { margin-top: 1.35vw; }
 
     /* ══════════════════════════════ 3. FOUNDER ══════════════════════════════ */
     .s-founder {
@@ -105,121 +108,78 @@
       grid-template-columns: 1.9fr 1fr;
       grid-template-rows: auto 1fr;
       column-gap: 3vw;
-      padding: 8vh 5vw 5vh;
+      padding: 4.5vw 5vw 2.81vw;
       overflow: hidden;
     }
     .founder-heading {
       grid-column: 1; grid-row: 1;
-      font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 4.6vw, 68px);
-      line-height: 1.08; color: var(--olive); text-align: center; margin: 0 0 4vh;
+      font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(0px, 4.6vw, 68px);
+      line-height: 1.08; color: var(--olive); text-align: center; margin: 0 0 2.25vw;
     }
     .founder-text {
       grid-column: 1; grid-row: 2; align-self: start;
-      font-family: var(--sans); font-size: clamp(15px, 1.25vw, 19px); font-weight: 300;
+      font-family: var(--sans); font-size: clamp(0px, 1.25vw, 19px); font-weight: 300;
       line-height: 1.6; color: var(--ink); letter-spacing: 0.01em;
     }
-    .founder-text p + p { margin-top: 1.4vh; }
+    .founder-text p + p { margin-top: 0.79vw; }
     .founder-photo {
       grid-column: 2; grid-row: 2; align-self: start; justify-self: end;
     }
-    .founder-photo img { height: clamp(240px, 42vh, 400px); width: auto; object-fit: cover; display: block; }
+    .founder-photo img { height: clamp(0px, 23.63vw, 400px); width: auto; object-fit: cover; display: block; }
 
     /* ══════════════════════════════ 4. RITUAL NOTES ══════════════════════════════ */
-    .s-notes { background: var(--brown); display: flex; flex-direction: column; justify-content: space-between; padding: 9vh 5vw 8vh; }
+    .s-notes { background: var(--brown); display: flex; flex-direction: column; justify-content: space-between; padding: 5.06vw 5vw 4.5vw; }
     .notes-top { display: grid; grid-template-columns: 1.9fr 1fr; gap: 4vw; align-items: start; }
     /* 2 stacked photos on the left, 1 tall photo on the right */
     .notes-collage {
       display: grid;
       grid-template-columns: 1fr 1.05fr;
       grid-template-rows: 1fr 1fr;
-      gap: 6px; height: 44vh;
+      gap: 0.4vw; height: 24.75vw;
     }
     .notes-cell { overflow: hidden; }
     .notes-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .notes-cell--tl { grid-column: 1; grid-row: 1; }
     .notes-cell--bl { grid-column: 1; grid-row: 2; }
     .notes-cell--r  { grid-column: 2; grid-row: 1 / 3; }
-    .notes-right { display: flex; flex-direction: column; gap: 3vh; }
+    .notes-right { display: flex; flex-direction: column; gap: 1.69vw; }
     .notes-title {
-      font-family: var(--serif); font-weight: 700; font-size: clamp(60px, 9vw, 150px);
+      font-family: var(--serif); font-weight: 700; font-size: clamp(0px, 9vw, 150px);
       line-height: 0.88; color: var(--light); letter-spacing: -0.02em; text-align: left;
     }
     .notes-desc {
-      font-family: var(--sans); font-size: clamp(13px, 1vw, 16px); font-weight: 300;
+      font-family: var(--sans); font-size: clamp(0px, 1vw, 16px); font-weight: 300;
       line-height: 1.7; color: var(--light); text-align: right; letter-spacing: 0.02em;
     }
     .notes-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.5vw; }
     .note-col-title {
-      font-family: var(--sans); font-size: clamp(14px, 1.4vw, 21px); font-weight: 600;
-      color: var(--light); margin-bottom: 1.6vh;
+      font-family: var(--sans); font-size: clamp(0px, 1.4vw, 21px); font-weight: 600;
+      color: var(--light); margin-bottom: 0.9vw;
     }
     .note-col-body {
-      font-family: var(--sans); font-size: clamp(12px, 1.05vw, 16px); font-weight: 300;
+      font-family: var(--sans); font-size: clamp(0px, 1.05vw, 16px); font-weight: 300;
       line-height: 1.7; color: var(--light); text-align: justify; letter-spacing: 0.01em;
     }
 
     /* ══════════════════════════════ 5. CTA ══════════════════════════════ */
     .s-cta { background: #fff8ef; display: grid; grid-template-columns: 2fr 1fr; }
-    .cta-left { display: flex; flex-direction: column; justify-content: center; padding: 6vh 4vw 6vh 5.5vw; align-items: center; }
-    .cta-h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 88px); line-height: 1.04; color: var(--ink); margin-bottom: 4vh; width: 100%; text-align: center; }
-    .cta-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.8vw, 48px); line-height: 1.18; color: var(--ink); margin-bottom: 4vh; text-align: center; width: 100%; }
-    .cta-body { font-family: var(--sans); font-size: clamp(12px, 0.9vw, 14.5px); font-weight: 300; line-height: 1.82; color: var(--ink); max-width: 520px; margin-bottom: 4.5vh; text-align: center; width: 100%; }
+    .cta-left { display: flex; flex-direction: column; justify-content: center; padding: 3.38vw 4vw 3.38vw 5.5vw; align-items: center; }
+    .cta-h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(0px, 5.5vw, 88px); line-height: 1.04; color: var(--ink); margin-bottom: 2.25vw; width: 100%; text-align: center; }
+    .cta-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(0px, 2.8vw, 48px); line-height: 1.18; color: var(--ink); margin-bottom: 2.25vw; text-align: center; width: 100%; }
+    .cta-body { font-family: var(--sans); font-size: clamp(0px, 0.9vw, 14.5px); font-weight: 300; line-height: 1.82; color: var(--ink); max-width: 520px; margin-bottom: 2.53vw; text-align: center; width: 100%; }
     .email-signup { width: 100%; max-width: 480px; align-self: center; }
-    .email-form { display: flex; align-items: center; border-bottom: 1.5px solid var(--ink); padding-bottom: 10px; gap: 10px; }
-    .email-form-prefix { font-family: var(--sans); font-size: clamp(8px, 0.6vw, 10px); font-weight: 400; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
+    .email-form { display: flex; align-items: center; border-bottom: 0.1vw solid var(--ink); padding-bottom: 0.7vw; gap: 0.7vw; }
+    .email-form-prefix { font-family: var(--sans); font-size: clamp(0px, 0.6vw, 10px); font-weight: 400; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
     .email-input {
       flex: 1; min-width: 0; border: none; background: transparent; outline: none;
-      font-family: var(--serif); font-style: italic; font-size: clamp(14px, 1.1vw, 18px);
+      font-family: var(--serif); font-style: italic; font-size: clamp(0px, 1.1vw, 18px);
       font-weight: 300; color: var(--ink); letter-spacing: 0.02em;
     }
     .email-input::placeholder { color: #b8b0a6; font-style: italic; }
-    .email-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: clamp(14px, 1.1vw, 18px); color: var(--ink); padding: 0; line-height: 1; transition: opacity 0.2s; flex-shrink: 0; }
+    .email-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: clamp(0px, 1.1vw, 18px); color: var(--ink); padding: 0; line-height: 1; transition: opacity 0.2s; flex-shrink: 0; }
     .email-btn:hover { opacity: 0.4; }
-    .cta-right { display: flex; align-items: center; justify-content: center; padding: 9vh 3vw; overflow: hidden; }
-    .cta-right img { height: clamp(240px, 46vh, 520px); width: auto; object-fit: cover; display: block; }
-
-    /* ══════════════════════════════ MOBILE  (≤ 768px) ══════════════════════════════
-       The reference is desktop-first. On narrow screens we stack every grid to a
-       single column and let sections grow to fit their content (height: auto with a
-       100vh floor) so nothing is clipped — and, being in normal flow, nothing overlaps. */
-    @media (max-width: 768px) {
-      section { height: auto; min-height: 100vh; overflow: visible; }
-
-      .s-hero { grid-template-columns: 1fr; }
-      .hero-left { order: 2; padding: 6vw 7vw 9vw; align-items: center; text-align: center; }
-      .hero-logo-block { margin-top: 5vw; }
-      .logo-img, .hero-tagline { margin-left: auto; margin-right: auto; }
-      .hero-body { max-width: 100%; }
-      .hero-cta-group { margin-top: 7vw; }
-      .hero-link { white-space: normal; }
-      .hero-right { order: 1; height: 56vh; }
-
-      .s-phil { grid-template-columns: 1fr; grid-template-rows: auto; padding: 12vw 7vw; row-gap: 7vw; }
-      .phil-headline { grid-column: 1; grid-row: auto; text-align: left; white-space: normal; margin: 0; padding-right: 0; }
-      .phil-left { grid-column: 1; grid-row: auto; padding-right: 0; }
-      .phil-photo-wrap { grid-column: 1; grid-row: auto; justify-content: center; padding-right: 0; }
-      .phil-photo-wrap img { height: 44vh; }
-
-      .s-founder { grid-template-columns: 1fr; grid-template-rows: auto; padding: 12vw 7vw; row-gap: 7vw; }
-      .founder-heading { grid-column: 1; grid-row: auto; text-align: left; margin: 0; }
-      .founder-text { grid-column: 1; grid-row: auto; }
-      .founder-photo { grid-column: 1; grid-row: auto; justify-self: center; }
-      .founder-photo img { height: 50vh; width: auto; }
-
-      .s-notes { justify-content: flex-start; gap: 9vw; padding: 14vw 7vw; }
-      .notes-top { grid-template-columns: 1fr; gap: 7vw; }
-      .notes-collage { height: 70vh; }
-      .notes-title { text-align: left; }
-      .notes-desc { text-align: left; }
-      .notes-cols { grid-template-columns: 1fr; gap: 7vw; }
-
-      .s-cta { grid-template-columns: 1fr; }
-      .cta-left { order: 2; padding: 12vw 7vw; align-items: center; }
-      .cta-h1, .cta-h2, .cta-body { text-align: center; }
-      .email-signup { align-self: center; width: 100%; }
-      .cta-right { order: 1; padding: 10vw 7vw 0; }
-      .cta-right img { height: 50vh; }
-    }
+    .cta-right { display: flex; align-items: center; justify-content: center; padding: 5.06vw 3vw; overflow: hidden; }
+    .cta-right img { height: clamp(0px, 25.88vw, 520px); width: auto; object-fit: cover; display: block; }
   </style>
 </head>
 <body>
