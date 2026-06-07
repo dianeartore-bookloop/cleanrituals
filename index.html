@@ -72,22 +72,35 @@
     .hero-right img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
 
     /* ══════════════════════════════ 2. PHILOSOPHY ══════════════════════════════ */
-    .s-phil { background: var(--olive); display: grid; grid-template-columns: 5fr 7fr; padding: 6vh 5vw 5vh 5vw; }
-    .phil-left { display: flex; flex-direction: column; justify-content: flex-end; gap: 2.4vh; padding-bottom: 6vh; padding-right: 2vw; }
-    .phil-right { display: flex; flex-direction: column; padding-left: 2vw; }
+    .s-phil {
+      background: var(--olive);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      column-gap: 3vw;
+      padding: 7vh 13vw 6vh 5.5vw;
+    }
     .phil-headline {
-      font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.8vw, 76px);
-      line-height: 1.05; color: var(--light); text-align: right; flex-shrink: 0; padding-top: 2vh;
+      grid-column: 2; grid-row: 1;
+      font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4.6vw, 72px);
+      line-height: 1.05; color: var(--light); text-align: center;
+      white-space: nowrap; margin: 0 auto 5vh;
+    }
+    .phil-left {
+      grid-column: 1; grid-row: 2;
+      align-self: start;
+      padding-right: 2vw;
     }
     .phil-body {
-      font-family: var(--sans); font-size: clamp(12px, 0.9vw, 15px); font-weight: 300;
-      line-height: 1.95; letter-spacing: 0.03em; color: var(--light);
+      font-family: var(--sans); font-size: clamp(14px, 1.15vw, 18px); font-weight: 300;
+      line-height: 1.8; letter-spacing: 0.01em; color: var(--light);
     }
+    .phil-body + .phil-body { margin-top: 2.4vh; }
     .phil-photo-wrap {
-      flex: 1; display: flex; align-items: flex-start; justify-content: flex-end;
-      padding-right: 3vw; padding-top: 3vh; padding-bottom: 6vh; min-height: 0;
+      grid-column: 2; grid-row: 2;
+      display: flex; align-items: flex-start; justify-content: center;
     }
-    .phil-photo-wrap img { height: clamp(200px, 50vh, 520px); width: auto; display: block; object-fit: cover; }
+    .phil-photo-wrap img { height: clamp(260px, 56vh, 520px); width: auto; display: block; object-fit: cover; }
 
     /* ══════════════════════════════ 3. FOUNDER ══════════════════════════════ */
     .s-founder { background: var(--cream); display: grid; grid-template-rows: auto 1fr; padding: 5vh 5vw 4vh; overflow: hidden; }
@@ -165,11 +178,10 @@
       .hero-link { white-space: normal; }
       .hero-right { order: 1; height: 56vh; }
 
-      .s-phil { grid-template-columns: 1fr; padding: 10vw 7vw; gap: 6vw; }
-      .phil-right { order: 1; padding-left: 0; }
-      .phil-left { order: 2; justify-content: flex-start; padding: 0; gap: 4vw; }
-      .phil-headline { text-align: left; padding-top: 0; margin-bottom: 4vw; }
-      .phil-photo-wrap { justify-content: center; padding: 4vw 0 0; }
+      .s-phil { grid-template-columns: 1fr; grid-template-rows: auto; padding: 12vw 7vw; row-gap: 7vw; }
+      .phil-headline { grid-column: 1; grid-row: auto; text-align: left; white-space: normal; margin: 0; padding-right: 0; }
+      .phil-left { grid-column: 1; grid-row: auto; padding-right: 0; }
+      .phil-photo-wrap { grid-column: 1; grid-row: auto; justify-content: center; padding-right: 0; }
       .phil-photo-wrap img { height: 44vh; }
 
       .s-founder { padding: 10vw 7vw; }
@@ -218,17 +230,15 @@
 
 <!-- ═══ 2. PHILOSOPHY ═══ -->
 <section class="s-phil">
+  <h2 class="phil-headline">The ritual is the result.</h2>
   <div class="phil-left">
     <p class="phil-body">Stripping beauty rituals back to what matters - intentional, sensory and worth repeating.</p>
     <p class="phil-body">Each formula created as a considered ritual — rooted in botanical wisdom. No distractions, No compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
     <p class="phil-body">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
   </div>
-  <div class="phil-right">
-    <h2 class="phil-headline">The ritual is the result.</h2>
-    <div class="phil-photo-wrap">
-      <img src="assets/leaves.jpg" alt="Hand holding botanical leaves">
-    </div>
-  </div>
+  <figure class="phil-photo-wrap">
+    <img src="assets/leaves.jpg" alt="Hand holding botanical leaves">
+  </figure>
 </section>
 
 <!-- ═══ 3. FOUNDER ═══ -->
