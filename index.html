@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -180,6 +180,321 @@
     .email-btn:hover { opacity: 0.4; }
     .cta-right { display: flex; align-items: center; justify-content: center; padding: 5.06vw 3vw; overflow: hidden; }
     .cta-right img { height: clamp(0px, 25.88vw, 520px); width: auto; object-fit: cover; display: block; }
+
+    /* ══════════════════ MOBILE-ONLY ELEMENTS (hidden on desktop) ══════════════════ */
+    .hero-img-mobile,
+    .link-mobile,
+    .headline-like,
+    .phil-brand-label,
+    .phil-body-mobile,
+    .notes-section-label,
+    .notes-mobile-desc,
+    .notes-mobile-cards,
+    .cta-circle-label,
+    .cta-mobile-heading,
+    .cta-mobile-body,
+    .btn-mobile-text,
+    .founder-text-mobile,
+    .cta-ritual-sign { display: none; }
+
+    /* ══════════════════════════════ MOBILE ≤ 767px ══════════════════════════════ */
+    @media (max-width: 767px) {
+      :root { --sans: 'Inter', system-ui, sans-serif; }
+      section { height: auto; overflow: visible; }
+
+      /* — Hero — */
+      .s-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 36px 24px 40px;
+        background: #f4eadc;
+        gap: 0;
+      }
+      .hero-left { display: contents; }
+      .label-caps.hero-coming {
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        color: var(--brown);
+        margin-bottom: 8px;
+      }
+      .headline-like { display: inline; }
+      .hero-logo-block { margin-top: 32px; margin-bottom: 0; }
+      .logo-img { width: 200px; }
+      .hero-tagline { font-size: 14px; font-weight: 500; width: auto; margin: 4px 0 20px; }
+      .hero-img-mobile {
+        display: block;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        height: 191px;
+        object-fit: contain;
+        object-position: center center;
+        mix-blend-mode: darken;
+        margin-top: 16px;
+        margin-bottom: 24px;
+      }
+      .hero-headline { font-size: 46px; line-height: 1.2; margin-bottom: 16px; }
+      .hero-body { font-size: 16px; font-weight: 300; line-height: 1.2; max-width: none; }
+      .hero-body + .hero-body { margin-top: 8px; }
+      .hero-cta-group {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .hero-link {
+        font-size: 15px;
+        letter-spacing: 0;
+        text-transform: none;
+        margin-bottom: 0;
+      }
+      .link-desktop { display: none; }
+      .link-mobile { display: inline; }
+      .hero-cta-group .hero-link:first-child {
+        background: var(--olive);
+        color: #f4eadc;
+        padding: 16px 24px;
+        border-radius: 18px;
+        width: 100%;
+        text-align: center;
+      }
+      .hero-cta-group .hero-link:last-child {
+        color: #9b4a20;
+        font-weight: 600;
+      }
+      .hero-right { display: none; }
+
+      /* — Philosophy — */
+      .s-phil { padding: 44px 24px; height: auto; overflow: visible; }
+      .phil-brand-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3.3px;
+        text-transform: uppercase;
+        color: #dfbf8c;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .phil-headline {
+        position: static;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1;
+        color: #f4eadc;
+        text-align: center;
+        white-space: normal;
+        right: auto;
+        top: auto;
+        margin-bottom: 28px;
+      }
+      .phil-left { max-width: none; padding-top: 0; text-align: center; }
+      .phil-body { display: none; }
+      .phil-body-mobile {
+        display: block;
+        font-family: var(--sans);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 4px;
+        color: #f4eadc;
+        text-align: center;
+      }
+      .phil-body-mobile + .phil-body-mobile { margin-top: 16px; }
+      .phil-photo-wrap { display: none; }
+
+      /* — Founder — */
+      .s-founder {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 44px;
+        background: #f4eadc;
+        overflow: visible;
+      }
+      .founder-photo { order: -1; width: 100%; margin-bottom: 28px; }
+      .founder-photo img { width: 100%; height: 416px; object-fit: cover; object-position: center top; }
+      .founder-heading {
+        font-size: 36px;
+        font-weight: 600;
+        font-style: normal;
+        font-family: var(--serif);
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 0 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--brown);
+      }
+      .founder-text { display: none; }
+      .founder-text-mobile {
+        display: block;
+        font-family: var(--sans);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--brown);
+        text-align: center;
+        padding: 0 24px;
+      }
+      .founder-text-mobile + .founder-text-mobile { margin-top: 16px; }
+
+      /* — Ritual Notes — */
+      .s-notes {
+        background: #f4eadc;
+        padding: 44px 24px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+      }
+      .notes-top, .notes-cols { display: none; }
+      .notes-section-label {
+        display: block;
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--brown);
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .notes-mobile-desc {
+        display: block;
+        font-family: var(--sans);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--brown);
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .notes-mobile-cards { display: flex; flex-direction: column; gap: 16px; }
+      .note-card-mobile { background: #dfbf8c; border-radius: 16px; padding: 28px 24px; text-align: center; }
+      .note-card-cat {
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--olive);
+        margin-bottom: 8px;
+      }
+      .note-card-title {
+        font-family: var(--serif);
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--brown);
+        margin-bottom: 12px;
+      }
+      .note-card-body {
+        font-family: var(--sans);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--ink);
+        margin-bottom: 14px;
+      }
+      .note-card-link {
+        font-family: var(--sans);
+        font-size: 14px;
+        font-weight: 600;
+        color: #9b4a20;
+        text-decoration: none;
+      }
+
+      /* — CTA — */
+      .s-cta { display: flex; flex-direction: column; background: var(--brown); }
+      .cta-right { display: none; }
+      .cta-left {
+        padding: 48px 24px 56px;
+        align-items: center;
+        background: var(--brown);
+        justify-content: flex-start;
+      }
+      .cta-h1, .cta-h2, .cta-body { display: none; }
+      .cta-circle-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #dfbf8c;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .cta-mobile-heading {
+        display: block;
+        font-family: var(--serif);
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 1;
+        color: #f4eadc;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .cta-mobile-body {
+        display: block;
+        font-family: var(--sans);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: #f4eadc;
+        text-align: center;
+        margin-bottom: 32px;
+        max-width: none;
+        width: 100%;
+      }
+      .email-signup { max-width: none; width: 100%; }
+      .email-form {
+        flex-direction: column;
+        border-bottom: none;
+        gap: 12px;
+        padding-bottom: 0;
+        align-items: stretch;
+      }
+      .email-form-prefix { display: none; }
+      .email-input {
+        background: #f4eadc;
+        border-radius: 26px;
+        padding: 16px 20px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 400;
+        font-style: normal;
+        width: 100%;
+        height: 52px;
+      }
+      .email-input::placeholder { color: #9b8f85; font-style: normal; }
+      .email-btn {
+        background: #c6913c;
+        color: #f4eadc;
+        border-radius: 26px;
+        padding: 0 20px;
+        font-size: 15px;
+        height: 52px;
+        font-family: var(--sans);
+        width: 100%;
+        text-align: center;
+        line-height: 1.3;
+        transition: opacity 0.2s;
+      }
+      .email-btn:hover { opacity: 0.85; }
+      .btn-arrow { display: none; }
+      .btn-mobile-text { display: inline; }
+      .cta-ritual-sign {
+        display: block;
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 400;
+        color: #f4eadc;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -192,11 +507,12 @@
       <img src="assets/logo.png" alt="Clean Rituals" class="logo-img">
       <p class="hero-tagline">Rooted. Refined.</p>
     </div>
-    <p class="hero-headline">Hair that feels itself again</p>
+    <img src="assets/hero.png" alt="" class="hero-img-mobile">
+    <p class="hero-headline">Hair that feels<span class="headline-like"> like</span> itself again</p>
     <p class="hero-body">A coming soon haircare brand for women returning to natural, intentional care - blending time-honoured beauty rituals, clean formulations and quiet power of nature.</p>
     <p class="hero-body">One considered product at a time.</p>
     <div class="hero-cta-group">
-      <a href="#cta" class="hero-link">Be the first to know</a>
+      <a href="#cta" class="hero-link"><span class="link-desktop">Be the first to know</span><span class="link-mobile">Join the Founder's Circle</span></a>
       <a href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener" class="hero-link">Follow the journey on Instagram</a>
     </div>
   </div>
@@ -207,11 +523,16 @@
 
 <!-- ═══ 2. PHILOSOPHY ═══ -->
 <section class="s-phil">
+  <p class="phil-brand-label">The Brand Belief</p>
   <h2 class="phil-headline">The ritual is the result.</h2>
   <div class="phil-left">
     <p class="phil-body">Stripping beauty rituals back to what matters - intentional, sensory and worth repeating.</p>
     <p class="phil-body">Each formula created as a considered ritual — rooted in botanical wisdom. No distractions, No compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
     <p class="phil-body">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
+    <p class="phil-body-mobile">Haircare is often rushed and treated as something to return to only when hair needs repair — dryness, damage, scalp stress after years of ignoring.</p>
+    <p class="phil-body-mobile">Clean Rituals begins with a quieter belief: the best beauty rituals are not rushed nor complicated. They are intentional, sensory, and worth repeating.</p>
+    <p class="phil-body-mobile">Each formula is being created as a considered ritual — rooted in natural, botanical wisdom, built for performance that is felt with every application and designed to feel effortless in everyday routines.</p>
+    <p class="phil-body-mobile">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
   </div>
   <figure class="phil-photo-wrap">
     <img src="assets/leaves.jpg" alt="Hand holding botanical leaves">
@@ -229,6 +550,10 @@
     <p>Thank you for being here at the beginning.</p>
     <p>Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition, and beyond. Rituals designed to bring care back into the everyday, so your hair can feel like itself again.</p>
   </div>
+  <p class="founder-text-mobile">I grew up with haircare that felt slow, intentional and purposeful. Each ritual and ingredient that was chosen was rooted in a simple belief: healthy hair should feel healthy, not just look the part.</p>
+  <p class="founder-text-mobile">As life moved on — through new cities, new countries, work, motherhood, and the quiet shifts that come with time — my hair began to feel less like the hair I remembered.</p>
+  <p class="founder-text-mobile">Clean Rituals began with a question: what if what my hair needed was not more but better, more intentional. A return to the potency of nature. A return to formulas that perform without the unnecessary. A return to haircare that feels like a ritual, not a rescue.</p>
+  <p class="founder-text-mobile">Clean Rituals is being created for hair that changes as life does — through motherhood, time, transition and beyond. The ritual is yours. We are simply here to make it cleaner, more potent and worth coming back to.</p>
   <figure class="founder-photo">
     <img src="assets/founder.png" alt="Founder of Clean Rituals">
   </figure>
@@ -236,6 +561,28 @@
 
 <!-- ═══ 4. RITUAL NOTES ═══ -->
 <section class="s-notes">
+  <p class="notes-section-label">The Ritual Notes</p>
+  <p class="notes-mobile-desc">Notes on natural haircare, clean beauty and the small rituals that bring care back into the everyday.</p>
+  <div class="notes-mobile-cards">
+    <div class="note-card-mobile">
+      <p class="note-card-cat">Natural Wisdom</p>
+      <p class="note-card-title">What Our Rituals Remember</p>
+      <p class="note-card-body">On warm oil, inherited care and the beauty wisdom worth carrying forward.</p>
+      <a href="#" class="note-card-link">Read the note →</a>
+    </div>
+    <div class="note-card-mobile">
+      <p class="note-card-cat">Botanical Potency</p>
+      <p class="note-card-title">The Potency Nature Already Holds</p>
+      <p class="note-card-body">On botanicals, formulation and why natural ingredients deserve more than a claim on the label.</p>
+      <a href="#" class="note-card-link">Read the note →</a>
+    </div>
+    <div class="note-card-mobile">
+      <p class="note-card-cat">Rituals for Everyday</p>
+      <p class="note-card-title">Making Hair Less of a Rescue</p>
+      <p class="note-card-body">How small, repeatable rituals can support hair through stress, climate, styling and the pace of modern life.</p>
+      <a href="#" class="note-card-link">Read the note →</a>
+    </div>
+  </div>
   <div class="notes-top">
     <div class="notes-collage">
       <div class="notes-cell notes-cell--tl"><img src="assets/notes-bottle.jpg" alt="Product bottle on linen with a card"></div>
@@ -266,15 +613,19 @@
 <!-- ═══ 5. CTA ═══ -->
 <section class="s-cta" id="cta">
   <div class="cta-left">
+    <p class="cta-circle-label">Join the Founder's Circle</p>
+    <h2 class="cta-mobile-heading">Follow the rituals before the products arrive</h2>
+    <p class="cta-mobile-body">Receive early Ritual Notes, behind-the-scenes updates and first access as Clean Rituals comes to life.</p>
     <h2 class="cta-h1">The doors open soon.</h2>
     <h3 class="cta-h2">Be among the first inside the founder's circle</h3>
     <p class="cta-body">We're putting the finishing touches on the first three rituals. Leave your email and we'll write to you once — when it's time.</p>
     <div class="email-signup">
       <form class="email-form" onsubmit="handleJoin(event,this)">
         <span class="email-form-prefix">Join the list</span>
-        <input class="email-input" type="email" placeholder="Your email address" required>
-        <button type="submit" class="email-btn" aria-label="Submit">&#8594;</button>
+        <input class="email-input" type="email" placeholder="Email address" required>
+        <button type="submit" class="email-btn" aria-label="Submit"><span class="btn-arrow">&#8594;</span><span class="btn-mobile-text">Join the Founder's Circle</span></button>
       </form>
+      <p class="cta-ritual-sign">The ritual is yours.</p>
     </div>
   </div>
   <div class="cta-right">
