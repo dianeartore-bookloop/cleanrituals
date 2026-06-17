@@ -41,7 +41,7 @@
 
     /* ══════════════════════════════ 1. HERO ══════════════════════════════ */
     .s-hero { background: var(--cream); display: grid; grid-template-columns: 1.28fr 1fr; }
-    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 2.81vw 4vw 2.81vw 5.5vw; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.81vw 4vw 2.81vw 5.5vw; }
     .label-caps {
       font-family: var(--sans); font-size: clamp(0px, 1.1vw, 17px); font-weight: 400;
       letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink);
@@ -153,9 +153,12 @@
     }
     .notes-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.5vw; }
     .note-col-title {
+      display: block; text-decoration: none;
       font-family: var(--sans); font-size: clamp(0px, 1.4vw, 21px); font-weight: 600;
       color: var(--light); margin-bottom: 0.9vw;
+      transition: opacity 0.2s;
     }
+    .note-col-title:hover { opacity: 0.5; cursor: pointer; }
     .note-col-body {
       font-family: var(--sans); font-size: clamp(0px, 1.05vw, 16px); font-weight: 300;
       line-height: 1.7; color: var(--light); text-align: justify; letter-spacing: 0.01em;
@@ -568,19 +571,19 @@
       <p class="note-card-cat">Natural Wisdom</p>
       <p class="note-card-title">What Our Rituals Remember</p>
       <p class="note-card-body">On warm oil, inherited care and the beauty wisdom worth carrying forward.</p>
-      <a href="#" class="note-card-link">Read the note →</a>
+      <a href="natural-wisdom.html" class="note-card-link">Read the note →</a>
     </div>
     <div class="note-card-mobile">
       <p class="note-card-cat">Botanical Potency</p>
       <p class="note-card-title">The Potency Nature Already Holds</p>
       <p class="note-card-body">On botanicals, formulation and why natural ingredients deserve more than a claim on the label.</p>
-      <a href="#" class="note-card-link">Read the note →</a>
+      <a href="clean-beauty-science.html" class="note-card-link">Read the note →</a>
     </div>
     <div class="note-card-mobile">
       <p class="note-card-cat">Rituals for Everyday</p>
       <p class="note-card-title">Making Hair Less of a Rescue</p>
       <p class="note-card-body">How small, repeatable rituals can support hair through stress, climate, styling and the pace of modern life.</p>
-      <a href="#" class="note-card-link">Read the note →</a>
+      <a href="rituals-for-real-life.html" class="note-card-link">Read the note →</a>
     </div>
   </div>
   <div class="notes-top">
@@ -596,15 +599,15 @@
   </div>
   <div class="notes-cols">
     <div>
-      <p class="note-col-title">Natural Wisdom</p>
+      <a href="natural-wisdom.html" class="note-col-title">Natural Wisdom</a>
       <p class="note-col-body">Rituals we remember - reflection on beauty wisdom as old as time itself and how we can carry it forward with more intention</p>
     </div>
     <div>
-      <p class="note-col-title">Clean Beauty Science</p>
+      <a href="clean-beauty-science.html" class="note-col-title">Clean Beauty Science</a>
       <p class="note-col-body">Simple guide to understanding filters, harsh surfactants and why ingredients should earn their place in every formula</p>
     </div>
     <div>
-      <p class="note-col-title">Rituals for Real Life</p>
+      <a href="rituals-for-real-life.html" class="note-col-title">Rituals for Real Life</a>
       <p class="note-col-body">How small, easy, repeatable rituals can support hair through stress, climate, styling and pace of life</p>
     </div>
   </div>
