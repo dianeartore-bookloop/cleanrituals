@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Potency Nature Already Holds — Ritual Notes — Clean Rituals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #9B4A20;
+      --ink:   #F4EADC;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5.5vw;
+      height: 72px;
+    }
+    .nav-logo { height: 56px; width: auto; display: block; }
+    .nav-back {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 5vh 5.5vw 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .article-eyebrow { margin-bottom: 4.5vh; }
+    .article-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(48px, 7.5vw, 118px);
+      line-height: 0.94;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+      margin-bottom: 3.5vh;
+      text-align: center;
+    }
+    .article-subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(16px, 1.4vw, 22px);
+      line-height: 1.4;
+      color: var(--ink);
+      opacity: 0.6;
+      margin-bottom: 4vh;
+      max-width: 600px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding-bottom: 5vh;
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      justify-content: center;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5.5vw 14vh;
+      display: grid;
+      grid-template-columns: 1fr 540px 1fr;
+      gap: 0 4vw;
+    }
+    .col-centre { grid-column: 2; }
+    .col-full   { grid-column: 1 / -1; }
+
+    .intro-para {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(20px, 1.9vw, 30px);
+      line-height: 1.55;
+      color: var(--ink);
+      padding-top: 7vh;
+      padding-bottom: 5vh;
+    }
+    .body-para {
+      font-family: var(--sans);
+      font-size: clamp(13px, 0.95vw, 15.5px);
+      font-weight: 300;
+      line-height: 1.90;
+      color: var(--ink);
+      letter-spacing: 0.015em;
+      text-wrap: pretty;
+    }
+    .body-para + .body-para { margin-top: 1.8vh; }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      grid-column: 1 / -1;
+      padding: 7vh 0;
+      border-top: 1px solid rgba(244,234,220,0.20);
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      margin: 7vh 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 0 4vw;
+      align-items: center;
+    }
+    .pull-quote-mark {
+      font-family: var(--serif);
+      font-size: clamp(80px, 10vw, 140px);
+      line-height: 0.7;
+      color: var(--ink);
+      opacity: 0.18;
+      align-self: flex-start;
+      padding-top: 0.2em;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(24px, 2.6vw, 40px);
+      line-height: 1.35;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .pull-quote-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .pull-quote-right-mark {
+      font-family: var(--serif);
+      font-size: clamp(80px, 10vw, 140px);
+      line-height: 0.7;
+      color: var(--ink);
+      opacity: 0.18;
+      align-self: flex-end;
+      padding-bottom: 0.1em;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      grid-column: 2;
+      border-top: 1px solid rgba(244,234,220,0.20);
+      margin-top: 7vh;
+      padding-top: 5vh;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4vh;
+    }
+    .cta-block-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 1.6vw, 26px);
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .cta-block-body {
+      font-family: var(--sans);
+      font-size: clamp(12px, 0.88vw, 14px);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+    .cta-block-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-top: 0.5vh;
+    }
+    .cta-block-link:hover { opacity: 0.5; }
+
+    /* ── END ── */
+    .article-end {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5vh;
+      padding-top: 8vh;
+    }
+    .end-ornament { display: flex; align-items: center; gap: 14px; }
+    .end-line { width: 48px; height: 1px; background: var(--ink); opacity: 0.35; }
+    .end-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ink); opacity: 0.35; }
+    .end-back-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .end-back-link:hover { opacity: 0.5; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 767px) {
+      .site-nav { height: 60px; padding: 0 24px; }
+      .nav-logo { height: 40px; }
+
+      .article-header { padding: 5vh 24px 0; }
+      .article-title { font-size: clamp(38px, 11vw, 62px); line-height: 1.05; }
+
+      .article-body {
+        grid-template-columns: 1fr;
+        padding: 0 24px 10vh;
+        gap: 0;
+      }
+      .col-centre,
+      .col-full,
+      .cta-block,
+      .article-end { grid-column: 1; }
+
+      .pull-quote {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 5vh 0;
+        margin: 5vh 0;
+      }
+      .pull-quote-mark,
+      .pull-quote-right { display: none; }
+      .pull-quote-text { font-size: clamp(20px, 5.5vw, 28px); }
+
+      .intro-para { font-size: clamp(18px, 5vw, 24px); }
+      .body-para { font-size: 15px; line-height: 1.75; }
+      .cta-block-text { font-size: clamp(17px, 4.5vw, 22px); }
+      .cta-block-body { font-size: 13px; }
+      .cta-block-link { font-size: 11px; }
+      .end-back-link { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">
+    <img src="assets/logo-white-transparent.png" alt="Clean Rituals" class="nav-logo">
+  </a>
+  <a href="index.html" class="nav-back">&#8592; Ritual Notes</a>
+</nav>
+
+<article>
+
+  <header class="article-header">
+    <div class="article-eyebrow"></div>
+    <h1 class="article-title">The Potency Nature<br>Already Holds</h1>
+    <p class="article-subtitle">On botanicals, formulation and why natural ingredients deserve more than a mention on the label.</p>
+    <div class="article-meta"></div>
+  </header>
+
+  <div class="article-body">
+
+    <p class="intro-para col-centre">
+      Somewhere along the way, natural ingredients became either overly romanticised or quietly underestimated.
+    </p>
+
+    <div class="col-centre">
+      <p class="body-para">In beauty, they are often used as a mood: a leaf on the label, a familiar herb in the story, mention of an oil because it sounds nourishing. Sometimes they are treated as ancient and mystical and sometimes dismissed as too simple to be effective.</p>
+      <p class="body-para">I have always felt there is a quieter truth in between.</p>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pull-quote-mark">&ldquo;</div>
+      <p class="pull-quote-text">Natural ingredients are not weak. They are not old-fashioned. They are not magic either. They are materials with character, purpose and potency &mdash; but only when they are understood properly and used with intention.</p>
+      <div class="pull-quote-right">
+        <div class="pull-quote-right-mark">&rdquo;</div>
+      </div>
+    </div>
+
+    <div class="col-centre">
+      <p class="body-para">In the rituals I grew up around, ingredients were never chosen because they sounded beautiful. They had a role. Oils to soften, protect and prepare the hair. Herbs to cleanse. Each botanical chosen carefully for the purpose it served in making the ritual powerful and complete.</p>
+      <p class="body-para">But translating that wisdom into modern haircare is not as simple as placing a botanical extract into a formula and calling it natural. That is where many products and brands fall short.</p>
+      <p class="body-para">A natural ingredient is not automatically powerful because it is present. It becomes meaningful when it is chosen for a reason, extracted with care, used at the right level and placed in a formula that allows it to do its work.</p>
+      <p class="body-para">This is especially important for hair, because hair changes as life does.</p>
+      <p class="body-para">Environment, styling, motherhood, hormonal shifts, age and stress can all change how hair feels and behaves. It may feel drier, more fragile, more frizzy, more reactive at the scalp or simply less like the hair you once knew.</p>
+      <p class="body-para">The answer is not always more products or even stronger products.</p>
+      <p class="body-para">Sometimes, what hair needs is a better rhythm of care &mdash; one that understands the root cause, supports the hair fibre and makes consistency easier. That is where botanical ingredients can be deeply relevant.</p>
+      <p class="body-para">At Clean Rituals, we are interested in botanicals that earn their place. Not because they sound familiar or they make a label feel more natural but because they bring something to the ritual.</p>
+      <p class="body-para">Amla, shikakai, reetha, aloe, hibiscus, fenugreek, coconut, bhringraj, neem, rosemary, and many others come with long histories of use and research that backs the claims. The real work is in asking: what role does this ingredient play now? How should it be used? What format makes it effective and easy to return to? What does it need to be paired with? What should be left out so it can do its work without noise?</p>
+      <p class="body-para">This is the difference between using nature as decoration and using nature with discipline.</p>
+      <p class="body-para">Clean Rituals is not recreating kitchen remedies in a jar. It is building rituals that understood nature has potency but care requires intention.</p>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pull-quote-mark">&ldquo;</div>
+      <p class="pull-quote-text">We believe modern natural haircare should be both sensorial and serious. Beautiful to use but also be considered.</p>
+      <div class="pull-quote-right">
+        <div class="pull-quote-right-mark">&rdquo;</div>
+      </div>
+    </div>
+
+    <div class="col-centre">
+      <p class="body-para">It should honour botanical wisdom without hiding behind it. Perform without excess and support hair through the different seasons of life.</p>
+      <p class="body-para">Because the future of natural beauty is not about going backwards.</p>
+      <p class="body-para">It is about remembering what nature already holds &mdash; and formulating it for the way we live now.</p>
+    </div>
+
+    <div class="cta-block">
+      <p class="cta-block-text">If this way of thinking about haircare feels familiar &mdash; or like something you want to return to &mdash; join the Founder&#8217;s Circle for early Ritual Notes, behind-the-scenes updates and first access as Clean Rituals comes to life.</p>
+      <p class="cta-block-body">The ritual is yours. We are simply here to make it cleaner, easier and worth coming back to.</p>
+      <a href="index.html#cta" class="cta-block-link">Join the list &#8594;</a>
+    </div>
+
+    <div class="article-end">
+      <div class="end-ornament">
+        <div class="end-line"></div>
+        <div class="end-dot"></div>
+        <div class="end-line"></div>
+      </div>
+      <a href="index.html" class="end-back-link">Return to Clean Rituals</a>
+    </div>
+
+  </div>
+</article>
+
+</body>
+</html>
