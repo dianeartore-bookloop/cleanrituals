@@ -75,29 +75,38 @@
     .hero-right img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
 
     /* ══════════════════════════════ 2. PHILOSOPHY ══════════════════════════════ */
-    /* heading + photo are anchored to the SAME right edge so they line up */
     .s-phil {
       background: var(--olive);
-      position: relative;
-      padding: 4.5vw 5.5vw 3.38vw;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+    .phil-banner {
+      flex: 0 0 30%;
+      overflow: hidden;
+    }
+    .phil-banner img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block;
+    }
+    .phil-text-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5vw 10vw;
+      text-align: center;
     }
     .phil-headline {
-      position: absolute; top: 5.63vw; right: 21vw;
       font-family: var(--serif); font-weight: 400; font-size: clamp(0px, 4.6vw, 72px);
-      line-height: 1.05; color: var(--light); text-align: right;
-      white-space: nowrap; margin: 0;
+      line-height: 1.05; color: var(--light); text-align: center;
+      margin: 0 0 1.8vw;
     }
-    .phil-photo-wrap {
-      position: absolute; top: 13.5vw; right: 21vw;
-    }
-    .phil-photo-wrap img { height: clamp(0px, 30.94vw, 520px); width: auto; display: block; object-fit: cover; }
-    .phil-left {
-      max-width: 44%;
-      padding-top: 9vw;
-    }
+    .phil-photo-wrap { display: none; }
+    .phil-left { max-width: 800px; }
     .phil-body {
       font-family: var(--sans); font-size: clamp(0px, 1.15vw, 18px); font-weight: 300;
-      line-height: 1.8; letter-spacing: 0.01em; color: var(--light);
+      line-height: 1.8; letter-spacing: 0.01em; color: var(--light); text-align: center;
     }
     .phil-body + .phil-body { margin-top: 1.35vw; }
 
@@ -271,7 +280,9 @@
       .hero-right { display: none; }
 
       /* — Philosophy — */
-      .s-phil { padding: 44px 24px; height: auto; overflow: visible; }
+      .s-phil { padding: 0; height: auto; overflow: visible; }
+      .phil-banner { display: none; }
+      .phil-text-area { padding: 44px 24px; align-items: center; text-align: center; }
       .phil-brand-label {
         display: block;
         font-size: 11px;
@@ -386,11 +397,13 @@
         margin-bottom: 8px;
       }
       .note-card-title {
+        display: block;
         font-family: var(--serif);
         font-size: 34px;
         font-weight: 400;
         line-height: 1.2;
         color: var(--brown);
+        text-decoration: none;
         margin-bottom: 12px;
       }
       .note-card-body {
@@ -516,7 +529,7 @@
     <p class="hero-body">One considered product at a time.</p>
     <div class="hero-cta-group">
       <a href="#cta" class="hero-link"><span class="link-desktop">Be the first to know</span><span class="link-mobile">Join the Founder's Circle</span></a>
-      <a href="https://www.instagram.com/cleanrituals/" target="_blank" rel="noopener" class="hero-link">Follow the journey on Instagram</a>
+      <a href="https://www.instagram.com/cleanrituals.hair/" target="_blank" rel="noopener" class="hero-link">Follow the journey on Instagram</a>
     </div>
   </div>
   <div class="hero-right">
@@ -526,20 +539,24 @@
 
 <!-- ═══ 2. PHILOSOPHY ═══ -->
 <section class="s-phil">
-  <p class="phil-brand-label">The Brand Belief</p>
-  <h2 class="phil-headline">The ritual is the result.</h2>
-  <div class="phil-left">
-    <p class="phil-body">Stripping beauty rituals back to what matters - intentional, sensory and worth repeating.</p>
-    <p class="phil-body">Each formula created as a considered ritual — rooted in botanical wisdom. No distractions, No compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
-    <p class="phil-body">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
-    <p class="phil-body-mobile">Haircare is often rushed and treated as something to return to only when hair needs repair — dryness, damage, scalp stress after years of ignoring.</p>
-    <p class="phil-body-mobile">Clean Rituals begins with a quieter belief: the best beauty rituals are not rushed nor complicated. They are intentional, sensory, and worth repeating.</p>
-    <p class="phil-body-mobile">Each formula is being created as a considered ritual — rooted in natural, botanical wisdom, built for performance that is felt with every application and designed to feel effortless in everyday routines.</p>
-    <p class="phil-body-mobile">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
+  <!-- Desktop banner -->
+  <div class="phil-banner">
+    <img src="assets/notes-bowl.jpg" alt="Hand holding a ritual bowl">
   </div>
-  <figure class="phil-photo-wrap">
-    <img src="assets/leaves.jpg" alt="Hand holding botanical leaves">
-  </figure>
+  <!-- Text area (desktop) / full section (mobile) -->
+  <div class="phil-text-area">
+    <p class="phil-brand-label">The Brand Belief</p>
+    <h2 class="phil-headline">The ritual is the result.</h2>
+    <div class="phil-left">
+      <p class="phil-body">Stripping beauty rituals back to what matters - intentional, sensory and worth repeating.</p>
+      <p class="phil-body">Each formula created as a considered ritual — rooted in botanical wisdom. No distractions, No compromise. Just formulas that honour the hair and feel effortless in everyday routines.</p>
+      <p class="phil-body">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
+      <p class="phil-body-mobile">Haircare is often rushed and treated as something to return to only when hair needs repair — dryness, damage, scalp stress after years of ignoring.</p>
+      <p class="phil-body-mobile">Clean Rituals begins with a quieter belief: the best beauty rituals are not rushed nor complicated. They are intentional, sensory, and worth repeating.</p>
+      <p class="phil-body-mobile">Each formula is being created as a considered ritual — rooted in natural, botanical wisdom, built for performance that is felt with every application and designed to feel effortless in everyday routines.</p>
+      <p class="phil-body-mobile">So caring for your hair becomes less of a rescue, and more of a rhythm.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 3. FOUNDER ═══ -->
@@ -569,19 +586,19 @@
   <div class="notes-mobile-cards">
     <div class="note-card-mobile">
       <p class="note-card-cat">Natural Wisdom</p>
-      <p class="note-card-title">What Our Rituals Remember</p>
+      <a href="natural-wisdom.html" class="note-card-title">What Our Rituals Remember</a>
       <p class="note-card-body">On warm oil, inherited care and the beauty wisdom worth carrying forward.</p>
       <a href="natural-wisdom.html" class="note-card-link">Read the note →</a>
     </div>
     <div class="note-card-mobile">
       <p class="note-card-cat">Botanical Potency</p>
-      <p class="note-card-title">The Potency Nature Already Holds</p>
+      <a href="clean-beauty-science.html" class="note-card-title">The Potency Nature Already Holds</a>
       <p class="note-card-body">On botanicals, formulation and why natural ingredients deserve more than a claim on the label.</p>
       <a href="clean-beauty-science.html" class="note-card-link">Read the note →</a>
     </div>
     <div class="note-card-mobile">
       <p class="note-card-cat">Rituals for Everyday</p>
-      <p class="note-card-title">Making Hair Less of a Rescue</p>
+      <a href="rituals-for-real-life.html" class="note-card-title">Making Hair Less of a Rescue</a>
       <p class="note-card-body">How small, repeatable rituals can support hair through stress, climate, styling and the pace of modern life.</p>
       <a href="rituals-for-real-life.html" class="note-card-link">Read the note →</a>
     </div>
