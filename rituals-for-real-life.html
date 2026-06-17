@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Making Haircare Less of a Rescue — Ritual Notes — Clean Rituals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:    #9B4A20;
+      --ink:   #F4EADC;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5.5vw;
+      height: 72px;
+    }
+    .nav-logo { height: 56px; width: auto; display: block; }
+    .nav-back {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      padding: 5vh 5.5vw 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .article-eyebrow { margin-bottom: 4.5vh; }
+    .article-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(48px, 7.5vw, 118px);
+      line-height: 1.05;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+      margin-bottom: 3.5vh;
+      text-align: center;
+    }
+    .article-subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(16px, 1.4vw, 22px);
+      line-height: 1.4;
+      color: var(--ink);
+      opacity: 0.6;
+      margin-bottom: 4vh;
+      max-width: 600px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding-bottom: 5vh;
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      justify-content: center;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5.5vw 14vh;
+      display: grid;
+      grid-template-columns: 1fr 540px 1fr;
+      gap: 0 4vw;
+    }
+    .col-centre { grid-column: 2; }
+    .col-full   { grid-column: 1 / -1; }
+
+    .intro-para {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(20px, 1.9vw, 30px);
+      line-height: 1.55;
+      color: var(--ink);
+      padding-top: 7vh;
+      padding-bottom: 5vh;
+    }
+    .body-para {
+      font-family: var(--sans);
+      font-size: clamp(13px, 0.95vw, 15.5px);
+      font-weight: 300;
+      line-height: 1.90;
+      color: var(--ink);
+      letter-spacing: 0.015em;
+      text-wrap: pretty;
+    }
+    .body-para + .body-para { margin-top: 1.8vh; }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      grid-column: 1 / -1;
+      padding: 7vh 0;
+      border-top: 1px solid rgba(244,234,220,0.20);
+      border-bottom: 1px solid rgba(244,234,220,0.20);
+      margin: 7vh 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 0 4vw;
+      align-items: center;
+    }
+    .pull-quote-mark {
+      font-family: var(--serif);
+      font-size: clamp(80px, 10vw, 140px);
+      line-height: 0.7;
+      color: var(--ink);
+      opacity: 0.18;
+      align-self: flex-start;
+      padding-top: 0.2em;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(24px, 2.6vw, 40px);
+      line-height: 1.35;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .pull-quote-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    .pull-quote-right-mark {
+      font-family: var(--serif);
+      font-size: clamp(80px, 10vw, 140px);
+      line-height: 0.7;
+      color: var(--ink);
+      opacity: 0.18;
+      align-self: flex-end;
+      padding-bottom: 0.1em;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      grid-column: 2;
+      border-top: 1px solid rgba(244,234,220,0.20);
+      margin-top: 7vh;
+      padding-top: 5vh;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4vh;
+    }
+    .cta-block-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 1.6vw, 26px);
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .cta-block-body {
+      font-family: var(--sans);
+      font-size: clamp(12px, 0.88vw, 14px);
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+    .cta-block-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-top: 0.5vh;
+    }
+    .cta-block-link:hover { opacity: 0.5; }
+
+    /* ── END ── */
+    .article-end {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5vh;
+      padding-top: 8vh;
+    }
+    .end-ornament { display: flex; align-items: center; gap: 14px; }
+    .end-line { width: 48px; height: 1px; background: var(--ink); opacity: 0.35; }
+    .end-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ink); opacity: 0.35; }
+    .end-back-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .end-back-link:hover { opacity: 0.5; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 767px) {
+      .site-nav { height: 60px; padding: 0 24px; }
+      .nav-logo { height: 40px; }
+
+      .article-header { padding: 5vh 24px 0; }
+      .article-title { font-size: clamp(38px, 11vw, 62px); line-height: 1.05; }
+
+      .article-body {
+        grid-template-columns: 1fr;
+        padding: 0 24px 10vh;
+        gap: 0;
+      }
+      .col-centre,
+      .col-full,
+      .cta-block,
+      .article-end { grid-column: 1; }
+
+      .pull-quote {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 5vh 0;
+        margin: 5vh 0;
+      }
+      .pull-quote-mark,
+      .pull-quote-right { display: none; }
+      .pull-quote-text { font-size: clamp(20px, 5.5vw, 28px); }
+
+      .intro-para { font-size: clamp(18px, 5vw, 24px); }
+      .body-para { font-size: 15px; line-height: 1.75; }
+      .cta-block-text { font-size: clamp(17px, 4.5vw, 22px); }
+      .cta-block-body { font-size: 13px; }
+      .cta-block-link { font-size: 11px; }
+      .end-back-link { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">
+    <img src="assets/logo-white-transparent.png" alt="Clean Rituals" class="nav-logo">
+  </a>
+  <a href="index.html" class="nav-back">&#8592; Ritual Notes</a>
+</nav>
+
+<article>
+
+  <header class="article-header">
+    <div class="article-eyebrow"></div>
+    <h1 class="article-title">Making Haircare<br>Less of a Rescue</h1>
+    <p class="article-subtitle">On simple rituals, changing hair, and the rhythm of care that fits real life.</p>
+    <div class="article-meta"></div>
+  </header>
+
+  <div class="article-body">
+
+    <p class="intro-para col-centre">
+      Haircare has a way of becoming urgent only when something begins to feel wrong.
+    </p>
+
+    <div class="col-centre">
+      <p class="body-para">The scalp feels unsettled. The ends feel dry. The frizz arrives before the day begins. Hair starts shedding more than usual. A texture that once felt familiar suddenly feels harder to manage.</p>
+      <p class="body-para">So we respond the way modern beauty has taught us to respond: with another product, another promise, another step.</p>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pull-quote-mark">&ldquo;</div>
+      <p class="pull-quote-text">But haircare does not always need more. Sometimes, it needs a rhythm. A small, repeatable ritual that meets your hair where it is &mdash; through climate, stress, styling, motherhood, hormonal shifts, age, travel, and the everyday pace of life.</p>
+      <div class="pull-quote-right">
+        <div class="pull-quote-right-mark">&rdquo;</div>
+      </div>
+    </div>
+
+    <div class="col-centre">
+      <p class="body-para">Because hair changes as life does.</p>
+      <p class="body-para">There are seasons when it needs more nourishment. Seasons when the scalp needs more attention. Seasons when hair feels drier, more fragile or more reactive. Seasons when a routine that once worked no longer feels right.</p>
+      <p class="body-para">That does not mean care has to become complicated.</p>
+      <p class="body-para">At Clean Rituals, we believe the most effective rituals are often the ones you can actually return to. Not ten steps. Not a shelf full of half-used bottles. Not a routine that asks for more time than you have.</p>
+      <p class="body-para">Just the right product, used with intention, at the right moment.</p>
+      <p class="body-para">A pre-wash ritual that prepares the hair before cleansing.<br>A sensorial formula that softens the act of care.<br>A texture that feels good enough to repeat.<br>Ingredients chosen for purpose, not decoration.<br>A routine that fits into real life instead of waiting for that special day.</p>
+      <p class="body-para">This is where formulation matters.</p>
+      <p class="body-para">A ritual only works if it is easy to come back to. The product has to feel beautiful but also practical. It has to respect the scalp, support the hair fibre, rinse easy and blends right into your daily routine.</p>
+    </div>
+
+    <div class="col-centre">
+      <p class="body-para">The best haircare does not ask you to choose between performance and simplicity.</p>
+      <p class="body-para">It should make care feel less reactive. Less rushed and more like something you do before your hair has to ask.</p>
+      <p class="body-para">From rescue to rhythm, to creating small rituals that support your hair consistently.</p>
+      <p class="body-para">From products that overwhelm the shelf to formulas that earn their place.</p>
+      <p class="body-para">Clean Rituals is being created for women whose hair has moved through life with them &mdash; through changing cities, changing climates, work, motherhood, time, transition and beyond.</p>
+      <p class="body-para">Not to promise that hair will never change BUT to make caring for it feel simpler, more intentional and easier to return to when it does.</p>
+    </div>
+
+    <div class="cta-block">
+      <p class="cta-block-text">If this way of caring for hair feels familiar &mdash; or like something you want to return to &mdash; join the Founder&#8217;s Circle for early Ritual Notes, behind-the-scenes updates and first access as Clean Rituals comes to life.</p>
+      <p class="cta-block-body">The ritual is yours. We are simply here to make it cleaner, easier and worth coming back to.</p>
+      <a href="index.html#cta" class="cta-block-link">Join the list &#8594;</a>
+    </div>
+
+    <div class="article-end">
+      <div class="end-ornament">
+        <div class="end-line"></div>
+        <div class="end-dot"></div>
+        <div class="end-line"></div>
+      </div>
+      <a href="index.html" class="end-back-link">Return to Clean Rituals</a>
+    </div>
+
+  </div>
+</article>
+
+</body>
+</html>
