@@ -12,12 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <style>
-    /* Override Brevo message panel colours to match Clean Rituals palette */
-    #error-message { font-family: var(--sans); font-size: 13px; color: #661d1d; background-color: #ffeded; border-color: #ff4949; border-radius: 3px; max-width: 480px; margin: 0 auto 12px; }
-    #success-message { font-family: var(--sans); font-size: 13px; color: #2a3d1a; background-color: #eaf4e0; border-color: #4d4f2a; border-radius: 3px; max-width: 480px; margin: 0 auto 12px; }
-  </style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -645,26 +639,15 @@
     <h2 class="cta-h1">The doors open soon.</h2>
     <h3 class="cta-h2">Be among the first inside the founder's circle</h3>
     <p class="cta-body">The first rituals are taking shape - slowly, intentionally, and with care. Leave your email and we'll write to you when it's time</p>
-    <div class="email-signup" id="sib-form-container">
-      <div id="error-message" class="sib-form-message-panel">
-        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-          <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
-        </div>
-      </div>
-      <div id="success-message" class="sib-form-message-panel">
-        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-          <span class="sib-form-message-panel__inner-text">You're in. We'll write when it's time.</span>
-        </div>
-      </div>
-      <div id="sib-container">
-      <form id="sib-form" class="email-form" method="POST" action="https://2d6345cb.sibforms.com/serve/MUIFAJE7A9H0AayN1siTKKO7esU9gU-6goaq7hokWqW_z3kjpke_cP0W2JPdE7I4m9cnJYeqhIER0ZnkslWukKTVjmLjit6Xp67wj4PQ4lcGnjTGM9DYHCVYRQeZ_a6flM6opELP5AWfAdYNONKkEenWPfjLuCvEdhcDus93GZw20zv8xzIaeonwwMOaIqcQBcJWNseUNs_aMPoVjA==" data-type="subscription">
+    <div class="email-signup">
+      <form class="email-form" method="POST" action="https://2d6345cb.sibforms.com/serve/MUIFAJE7A9H0AayN1siTKKO7esU9gU-6goaq7hokWqW_z3kjpke_cP0W2JPdE7I4m9cnJYeqhIER0ZnkslWukKTVjmLjit6Xp67wj4PQ4lcGnjTGM9DYHCVYRQeZ_a6flM6opELP5AWfAdYNONKkEenWPfjLuCvEdhcDus93GZw20zv8xzIaeonwwMOaIqcQBcJWNseUNs_aMPoVjA==" target="brevo-frame" onsubmit="handleBrevoSubmit(this)">
         <span class="email-form-prefix">Join the list</span>
-        <input class="email-input" type="text" id="EMAIL" name="EMAIL" placeholder="Email address" data-required="true" required>
-        <button type="submit" class="email-btn" form="sib-form" aria-label="Submit"><span class="btn-arrow">&#8594;</span><span class="btn-mobile-text">Join the Founder's Circle</span></button>
-        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input class="email-input" type="email" name="EMAIL" placeholder="Email address" required>
+        <button type="submit" class="email-btn" aria-label="Submit"><span class="btn-arrow">&#8594;</span><span class="btn-mobile-text">Join the Founder's Circle</span></button>
+        <input type="text" name="email_address_check" value="" style="display:none">
         <input type="hidden" name="locale" value="en">
       </form>
-      </div>
+      <iframe name="brevo-frame" style="display:none"></iframe>
       <p class="cta-ritual-sign">The ritual is yours.</p>
     </div>
   </div>
@@ -674,17 +657,17 @@
 </section>
 
 <script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'en';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-  window.INVALID_NUMBER = "The information provided is invalid. Please review the field format and try again.";
-  window.INVALID_DATE = "Please enter a valid date";
-  window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
-  window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
-  var AUTOHIDE = Boolean(1);
+function handleBrevoSubmit(form) {
+  var input = form.querySelector('input[name="EMAIL"]');
+  var btn = form.querySelector('button');
+  if (!input.value) return;
+  setTimeout(function() {
+    btn.querySelector('.btn-arrow') && (btn.querySelector('.btn-arrow').textContent = '✓');
+    input.placeholder = "You're in. We'll write when it's time.";
+    input.value = '';
+    form.style.pointerEvents = 'none';
+  }, 500);
+}
 </script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
